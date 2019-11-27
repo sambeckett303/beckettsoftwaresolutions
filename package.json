@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack",
-    "start": "node server.js"
+    "start": "node server.js",
+    "startdev": "npm run build && npm run start",
+    "dev": "nodemon -e js,vue,json --watch src --exec npm run startdev"
   },
   "author": "Sam Beckett",
   "license": "ISC",

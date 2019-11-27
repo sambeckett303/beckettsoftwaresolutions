@@ -26,11 +26,12 @@
 		</transition>
 		<transition name="workTransition">
 			<div id="activeWork" v-if="workActive" :class="{ activeServiceBigSize: activeWorkBigSize }">
-				<div id="activeWorkTitle"><div class="title">{{activeWork.title}}</div></div>
+				<!--<div id="activeWorkTitle"><div class="title">{{activeWork.title}}</div></div>-->
 				<div id="activeWorkDescription">
-					<div class="text" :style="{ top: activeWork.descriptionTop }">{{activeWork.description}}</div>
+					<div class="workLogo" :style="{ 'background-image': activeWork.logoImage.src, top: activeWork.logoImage.top, left: activeWork.logoImage.left, width: activeWork.logoImage.width, height: activeWork.logoImage.height }"></div>
+					<div class="text" :style="{ top: activeWork.descriptionTop }" v-html="activeWork.description"></div>
 				</div>
-				<div v-if="!isMobile" id="activeWorkImages">
+				<div v-if="!isMobile" id="activeWorkImages" style="display: none;">
 					<div v-for="image in activeWork.images" class="workImage" :style="{ 'background-image': image }"></div>
 				</div>
 				<div id="backContainer" @click="backToWork">
@@ -65,36 +66,42 @@
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% - 275px)',
 					hovering: false,
-					description: 'A professional full stack web developer for over 3 years. During this time, I helped stabilize the current web interface, and was the lead technical developer for the next generation of the RealStor web-based management interface. The web application behaves similar to a desktop application, with all functionality in a single page, similar to this website.',
-					descriptionTop: '260px',
-					images:
-					[
-						'url(/img/seagateOne.png)'
-					]
+					description: 'I currently work full time at Seagate. I have mostly worked on a world class single page web application used for managing a RAID storage system.<br><br>Provided leadership of a UI team of 2 others managing an existing interface, adding features and fixing bugs before releases. For about 2 of those years, was the lead architect and technical developer of building a completely re-designed and modernized version of the interface.<br><br>I am now currently working on a new exciting project. I am mostly doing work on the backend, while also offering guidance and leadership to our a 3 person UI team.',
+					descriptionTop: '205px',
+					logoImage: {
+						src: 'url(/img/logo.png)',
+						width: '200px',
+						height: '200px',
+						top: '60px'
+					}
 				},
 				{
 					title: 'Thrush Designs',
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% - 100px)',
 					hovering: false,
-					description: 'A portfolio website for a Seattle based artist. The site showcases her various categories of artwork, along with an online store where she can sell her current projects. Includes an administration page where the site content and orders can be managed.',
+					description: 'A Seattle based artist with amazing and creative art products, often plant-based artwork. The site is a portfolio that showcases her various categories of artwork, along with an online store where she can sell her current projects. Includes an administration page where all the site content and orders can be managed.<br><br>This project has not quite been launched "live" yet, as we are still in the process of defining her products and updating her pictures before we link the site to her domain.',
 					descriptionTop: '260px',
-					images:
-					[
-						'thrushOne'
-					]
+					logoImage: {
+						src: 'url(/img/thrushlogo.png)',
+						width: '400px',
+						height: '75px',
+						top: '153px'
+					}
 				},
 				{
 					title: 'Koza Customs',
 					top: '50%',
 					left: 'calc(50% - 189px)',
 					hovering: false,
-					description: 'A small custom metal fabrication shop here in Colorado. The site features a photo gallery of all his previous work, categorized by their two channels of work: Vehicles and Art. The site also has an online store, where users can buy his various vehicle and/or artwork products. Includes an administration page where the site content and orders can be managed.',
-					descriptionTop: '260px',
-					images:
-					[
-						'kozaOne'
-					]
+					description: 'A custom metal fabrication shop located out of Cedaredge, Colorado. The site features a photo gallery of all his previous work, categorized by their two channels of work: Vehicles and Art. The site also has an online store, where users can buy his various vehicle and/or artwork products. This particular site uses PayPal for the checkout process. The site includes a custom administration page I have built where all the site content, including the slideshow images, reviews, gallery projects, store products, and orders can be managed.<br><br>You can check out this project live over at <a href="https://www.kozacustoms.com">KozaCustoms.com</a>',
+					descriptionTop: '235px',
+					logoImage: {
+						src: 'url(/img/kozalogo.png)',
+						width: '398px',
+						height: '64px',
+						top: '165px'
+					}
 				},
 				{
 					title: 'In Progress...',
@@ -102,7 +109,7 @@
 					left: 'calc(50% + 75px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'Lorem ipsum this is some text about upcoming projects..'
+					description: 'There is always a new project I am working on. Want to work together? Contact me today!'
 				},
 				{
 					title: 'In Progress...',
@@ -110,7 +117,7 @@
 					left: 'calc(50% - 12px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'Lorem ipsum this is some text about upcoming projects..'
+					description: 'There is always a new project I am working on. Want to work together? Contact me today!'
 				}
 			],
 			isMobile: false,
@@ -319,34 +326,44 @@
 	#activeWorkTitle
 	{
 		position: absolute;
-	    left: 50%;
-	    top: 30px;
+	    right: 35%;
+	    top: 35px;
 	    background: url(/img/hexagon-04.png) no-repeat;
 	    background-size: contain;
 	    width: 175px;
-	    height: 270px;
+	    height: 200px;
 	    transform: translateX(-50%);
+	    display: table;
 
 	    .title
 	    {
-	    	position: absolute;
 		    width: 156px;
-		    top: 70px;
-		    left: 7px;
 		    text-align: center;
+		    display: table-cell;
+		    vertical-align: middle;
+		    font-size: 22px;
+    		padding: 0px 10px 5px 10px;
 	    }
 	}
 
 	#activeWorkDescription
 	{
 	    position: absolute;
-	    right: 90px;
+	    left: 50%;
 	    top: 50%;
 	    background: url(/img/hexagon-04.png) no-repeat;
 	    background-size: contain;
 	    width: 600px;
 	    height: 690px;
-	    transform: translateY(-50%);
+	    transform: translate(-50%, -50%);
+
+	    .workLogo
+	    {
+	    	position: absolute;
+	   		background-size: contain;
+	   		left: 50%;
+	   		transform: translateX(-50%);
+	    }
 
 	    .text
 	    {
@@ -443,7 +460,7 @@
 		background-size: contain;
 		position: absolute;
 		bottom: 25px;
-		left: 50%;
+		right: -20px ;
 		transform: translateX(-50%);
 		cursor: pointer;
 

@@ -4,7 +4,7 @@
 		<div class="pageTitle">My Reviews</div>
 		<template v-for="review in reviews">
 			<transition :name="revTran">
-				<div v-if="review.active" class="reviewHexagon">
+				<div v-if="review.active" class="reviewHexagon" :style="{ left: review.left }">
 					<div class="text">&quot;{{review.text}}&quot;</div>
 					<div class="client">
 						<div>{{review.clientName}}</div>
@@ -34,24 +34,20 @@
 			[
 				{
 					active: true,
+					left: '50%',
 					text: "Sam makes the best damn websites around, and he's very quick and efficient at what he does. My business has nearly tripled since we got our new website!",
 					clientName: "Gay Thrush",
 					clientCompany: "Thrush Designs"
 				},
 				{
 					active: false,
+					left: '50%',
 					text: "I effin love my new website. Sam made a kickass admin page to go along with my kickass website and I love it and stuff woo hoo!",
 					clientName: "Brad White",
 					clientCompany: "Koza Customs"
-				},
-				{
-					active: false,
-					text: "WAAAAAT Up my guy.",
-					clientName: "Gay Thrush",
-					clientCompany: "Thrush Designs"
 				}
 			],
-			revTran: 'leftRev'
+			revTran: 'rightRev'
 		}),
 		mounted() {
 		    this.$nextTick(() => {

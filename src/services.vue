@@ -69,7 +69,7 @@
 					transition: 'topLeftToMiddle',
 					zoomAnimation: 'One',
 					imageClass: 'planningImage',
-					text: 'I approach each project with a focus on the big picture. For the best results, first we define your goals, your ideal users and their use cases so that we have everything in order for the design process.'
+					text: 'I approach each project with a focus on the big picture, and planning is important. First we need to define your business goals, your ideal users, and their use cases so that we can gauge the project and best build the best interface possible for your business.'
 				},
 				{
 					label: "DESIGN",
@@ -79,7 +79,7 @@
 					transition: 'topRightToMiddle',
 					zoomAnimation: 'Two',
 					imageClass: 'designImage',
-					text: 'Simple, clean designs with intuitive user experience that will make your online presence stand out within your industry, and not only leaves users with a pleasant experience connected with your business, but also leads to conversions.'
+					text: 'Any custom built website requires a custom design that is tailored for your specific audience and industry. Simple, clean, and effective user interface designs paired with a great user experience that delivers results.'
 				},
 				{
 					label: "DEVELOPMENT",
@@ -89,7 +89,7 @@
 					transition: 'topMiddleToMiddle',
 					zoomAnimation: 'Three',
 					imageClass: 'developmentImage',
-					text: 'With over 5 years of professional full stack web development experience, anything and everything is possible! I specialize in "single page applications" that behave similar to desktop applications. 100% custom websites made from scratch.'
+					text: 'With over 5+ years of professional full stack web development experience, I have a mindset that anything and everything is possible! I have a ton of experience with both "single page applications" web apps, and tranditional multi-page websites.'
 				},
 				{
 					label: "DOMAINS & HOSTING",
@@ -99,27 +99,27 @@
 					transition: 'bottomRightToMiddle',
 					zoomAnimation: 'Four',
 					imageClass: 'domainsImage',
-					text: 'Whether you already own the domain, or you need one, I can plug your new website to the domain. I can also help with providing hosting the website.'
+					text: 'A website needs to live somewhere and it also needs an access point. Whether you already own the domain, or you need one, I help plug your new website to the domain of your choice. I can also help with providing affordable hosting the website.'
 				},
 				{
-					label: "SEO & ADVERTISING",
+					label: "MARKETING",
 					left: 'calc(50% - 165px)',
 					top: 'calc(50% + 43px)',
 					hovering: false,
 					transition: 'bottomLeftToMiddle',
 					zoomAnimation: 'Five',
 					imageClass: 'advertisingImage',
-					text: 'Nowadays, online marketing is critical. Optimize your website by investing in SEO so that it will rise up in relevant Google search results over time. Directly advertise the site on Google, Facebook, and Instagram to boost your audience.'
+					text: 'Nowadays, online marketing is critical. Expand your reach by adding my marketing package to your website. This includes my Search Engine Optimization (SEO) services, along with help advertising your services on the right platform (Google, Facebook, and/or Instagram).'
 				},
 				{
-					label: "CONTINUOUS IMPROVEMENT",
+					label: "SUPPORT",
 					left: 'calc(50% - 246px)',
 					top: 'calc(50% - 100px)',
 					hovering: false,
 					transition: 'leftToMiddle',
 					zoomAnimation: 'Six',
 					imageClass: 'contentImage',
-					text: 'A website is never done, it can always be improved over time. Improve your overall conversions by making small tweaks to the design. Update the site for seasonal and holiday sales. Whatever improvements you want to make, we can make it happen.'
+					text: 'A website is never done, it should always be improved over time. We can make small tweaks to the design or update the site for seasonal and holiday sales. Whatever changes you want to make over time, we can make it happen quickly and easily.'
 				}
 			]
 		}),
@@ -141,8 +141,8 @@
 				this.zoomAnimation = 'zoomOutAnimation' + serviceHexagon.zoomAnimation;
 				setTimeout(function() {
 					this.serviceActive = true;
-					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 600) ||
-						(window.innerWidth > window.innerHeight && window.innerHeight <= 600))
+					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 700) ||
+						(window.innerWidth > window.innerHeight && window.innerHeight <= 700))
 					{
 						this.zoomToHold = 'scale(0.45)';
 					}
@@ -169,8 +169,8 @@
 					this.backAnchored = false;
 					this.zoomAnimation = 'zoomInAnimation' + this.activeService.zoomAnimation;
 					this.anchorOutOfSight = '';
-					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 600) ||
-						(window.innerWidth > window.innerHeight && window.innerHeight <= 600))
+					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 700) ||
+						(window.innerWidth > window.innerHeight && window.innerHeight <= 700))
 					{
 						this.zoomToHold = 'scale(0.45)';
 					}
@@ -235,7 +235,7 @@
 		    position: absolute;
 		    left: 0;
 		    right: 0;
-		    top: 75px;
+		    top: 105px;
 		    width: 300px;
 		    margin: auto;
 	    }
@@ -247,6 +247,7 @@
 		    padding: 10px 60px;
 		    left: -15px;
 		    text-align: center;
+		    font-size: 20px;
 	    }
 	}
 	#backContainer
@@ -660,8 +661,8 @@
 		background-size: contain;
 	}
 
-	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
-		   only screen and (min-height: 300px) and (max-height: 600px) and (orientation: landscape)
+	@media only screen and (min-width: 300px) and (max-width: 700px) and (orientation: portrait),
+		   only screen and (min-height: 300px) and (max-height: 700px) and (orientation: landscape)
 	{
 		#servicesContainer
 		{

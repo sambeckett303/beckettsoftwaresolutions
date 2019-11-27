@@ -9,10 +9,10 @@
 		</div>
 		<div class="homeContainer">
 			<div class="headline">
-				SIMPLE DESIGNS,<br>
+				SIMPLE DESIGNS &<br>
 				AMAZING EXPERIENCES
 			</div>
-			<div class="headline2">Hello! I am Sam Beckett, a software developer from Colorado who is passionate about building beautiful websites that work.</div>
+			<div class="headline2">Hello! I am Sam Beckett, a software developer from Colorado who is passionate about building beautiful and unique websites that <b>deliver results</b>.</div>
 		</div>
 		<div id="whitePolygon"></div>
 		<div
@@ -27,7 +27,7 @@
 				height: h.size
 			}">
 		</div>
-		<div v-if="showButton()" class="primaryButton homeButton">Get a free quote for your project!</div>
+		<div v-if="showButton()" class="primaryButton homeButton">Let's Chat!</div>
 		<div class="downArrowArea">
 			<div class="downArrowText">{{swipeOrScroll()}}</div>
 			<div class="downArrow"></div>
@@ -168,8 +168,15 @@
 			{
 				if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
 				{
-					// Landscape mobile
-					return window.innerHeight - 35 + 'px';
+					if (window.innerWidth < 700)
+					{
+						// Landscape mobile
+						return window.innerHeight - 35 + 'px';
+					}
+					else
+					{
+						return window.innerHeight - 110 + 'px';
+					}
 				}
 				else if (window.innerWidth <= 415)
 				{
@@ -278,7 +285,7 @@
 	.homeButton
 	{
 		position: absolute;
-	    top: 394px;
+	    top: 410px;
 	    left: 10%;
 	}
 
@@ -339,7 +346,7 @@
 
 		.homeButton
 		{
-			top: 319px;
+			top: 355px;
     		font-size: 13px;
 		}
 
@@ -356,6 +363,14 @@
 	}
 
 	@media only screen and (min-width: 575px) and (max-width: 770px) {
+		#bg 
+		{
+			top: 35px;
+			bottom: 110px;
+		}
+	}
+
+	@media only screen and (min-width: 575px) and (max-width: 770px) and (orientation: portrait) {
 		#bg 
 		{
 			top: 80px;
@@ -377,7 +392,7 @@
 
 		.homeButton
 		{
-			top: 319px;
+			top: 360px;
     		font-size: 13px;
 		}
 
@@ -493,7 +508,15 @@
 			top: 120px;
 		}
 
-		.homeButton
+	}
+
+	/* Portrait */
+	@media only screen 
+	  and (min-device-width: 375px) 
+	  and (max-device-width: 667px) 
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (orientation: portrait) { 
+	  	.homeButton
 		{
 			top: 295px;
 			font-size: 12px;
@@ -511,22 +534,28 @@
 		}
 	}
 
-	/* Portrait */
-	@media only screen 
-	  and (min-device-width: 375px) 
-	  and (max-device-width: 667px) 
-	  and (-webkit-min-device-pixel-ratio: 2)
-	  and (orientation: portrait) { 
-
-	}
-
 	/* Landscape */
 	@media only screen 
 	  and (min-device-width: 375px) 
 	  and (max-device-width: 667px) 
 	  and (-webkit-min-device-pixel-ratio: 2)
 	  and (orientation: landscape) { 
+	  	.homeButton
+		{
+			top: 295px;
+			font-size: 12px;
+		}
 
+		.headline
+		{
+			font-size: 13px;
+		}
+
+		.headline2
+		{
+			width: 260px;
+			font-size: 11px;
+		}
 	}
 
 	/* ----------- Galaxy S4, S5 and Note 3 ----------- */
@@ -764,7 +793,7 @@
 
 		.homeButton
 		{
-			top: 378px;
+			top: 415px;
     		font-size: 16px;
 		}
 	}
@@ -794,11 +823,13 @@
 	  and (min-device-width: 1024px) 
 	  and (max-device-width: 1366px)
 	  and (-webkit-min-device-pixel-ratio: 2) {
+	  	/*
 	  	#bg
 		{
 			top: 65px;
 			bottom: 110px;
 		}
+		*/
 		#whitePolygon
 		{
 			left: 46%;
@@ -820,7 +851,7 @@
 
 		.homeButton
 		{
-			top: 378px;
+			top: 420px;
     		font-size: 16px;
 		}
 	}

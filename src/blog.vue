@@ -60,28 +60,12 @@
 			featuredBlogs:
 			[
 				{
-					title: "10 Reasons Why You Should Hire a Developer",
-					date: "April 4, 2019",
-					url: "10_Reasons_Why_You_Should_Hire_a_Developer",
+					title: "10 Reasons Why You Should Hire Professional Developers For Your Website",
+					date: "Oct 27, 2019",
+					url: "10_Reasons_Why_You_Should_Hire_Professional_Developers_For_Your_Website",
 					hovering: false,
 					top: "10px",
-					left: "150px"
-				},
-				{
-					title: "How to Choose a Front End Framework: Vue.js vs Angular vs Ember",
-					date: "April 10, 2019",
-					url: "How_to_Choose_a_Front_End_Framework:_Vue.js_vs_Angular_vs_Ember",
-					hovering: false,
-					top: "10px",
-					left: "373px"
-				},
-				{
-					title: "What? it's like living with a severe hearing impairment",
-					date: "May 10, 2019",
-					url: "What?_it's_like_living_half_deaf",
-					hovering: false,
-					top: "206px",
-					left: "259px"
+					left: "calc(50% - 108px)"
 				}
 			]
 		}),
@@ -252,6 +236,7 @@
 		position: absolute;
 		top: 250px;
 		left: 0;
+		right: 0;
 	}
 	.active
 	{
