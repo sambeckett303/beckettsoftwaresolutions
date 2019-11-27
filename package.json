@@ -2,12 +2,11 @@
   "name": "BeckettSoftwareSolutions",
   "version": "1.0.0",
   "description": "Portfolio site for Sam Beckett.",
-  "main": "server.js",
+  "main": "start",
   "scripts": {
     "build": "webpack",
-    "start": "node server.js",
-    "startdev": "npm run build && npm run start",
-    "dev": "nodemon -e js,vue,json --watch src --exec npm run startdev"
+    "start": "npm run build && node server.js",
+    "dev": "nodemon -e js,vue,json --watch src --exec npm run start"
   },
   "author": "Sam Beckett",
   "license": "ISC",
