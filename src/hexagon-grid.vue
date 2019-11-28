@@ -122,6 +122,39 @@
 					bottom: '15px'
 				}
 			],
+			mobileBlogHexagons:
+			[
+				{
+					size: '30px',
+					bottom: '75px',
+					left: '5%'
+				},
+				{
+					size: '60px',
+					top: '330px',
+					right: '110px'
+				},
+				{
+					size: '15px',
+					bottom: '130px',
+					right: '5px'
+				},
+				{
+					size: '100px',
+					left: '25px',
+					top: '130px'
+				},
+				{
+					size: '60px',
+					right: '15px',
+					top: '55px'
+				},
+				{
+					size: '30px',
+					left: '30%',
+					bottom: '25px'
+				}
+			],
 			workHexagons:
 			[
 				{
@@ -303,6 +336,10 @@
 						break;
 					case 'reviews':
 						this.hexagons = this.mobileReviewHexagons;
+						break;
+					case 'blog':
+					case 'blogpost':
+						this.hexagons = this.mobileBlogHexagons;
 						break;
 				}
 			}

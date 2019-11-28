@@ -60,9 +60,9 @@
 			featuredBlogs:
 			[
 				{
-					title: "10 Reasons Why You Should Hire Professional Developers For Your Website",
+					title: "7 Reasons Why You Should Hire Professional Developers For Your Website",
 					date: "Oct 27, 2019",
-					url: "10_Reasons_Why_You_Should_Hire_Professional_Developers_For_Your_Website",
+					url: "7_Reasons_Why_You_Should_Hire_Professional_Developers_For_Your_Website",
 					hovering: false,
 					top: "10px",
 					left: "calc(50% - 108px)"

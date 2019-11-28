@@ -134,6 +134,9 @@
 		.blogContentContainer p {
     		width: 80%;
     	}
+    	.blogContentContainer ol {
+    		width: 90%;
+    	}
     	.blogContentContainer p:first-of-type {
     		padding-top: 22px;
     	}
