@@ -29,7 +29,7 @@
 		</div>
 		<div v-if="showButton()" class="primaryButton homeButton">Let's Chat!</div>
 		<div class="downArrowArea">
-			<div class="downArrowText">{{swipeOrScroll()}}</div>
+			<div class="downArrowText" v-html="swipeOrScroll()"></div>
 			<div class="downArrow"></div>
 		</div>
 	</div>
@@ -46,7 +46,7 @@
 			{
 				if (window.innerWidth <= 375)
 				{
-					return 'SWIPE FAST';
+					return 'SWIPE&nbsp;FAST';
 				}
 				else
 				{
