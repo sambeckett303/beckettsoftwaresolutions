@@ -46,7 +46,7 @@
 			{
 				if (window.innerWidth <= 375)
 				{
-					return 'SWIPE';
+					return 'SWIPE FAST';
 				}
 				else
 				{
