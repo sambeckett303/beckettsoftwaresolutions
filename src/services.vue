@@ -69,7 +69,7 @@
 					transition: 'topLeftToMiddle',
 					zoomAnimation: 'One',
 					imageClass: 'planningImage',
-					text: 'I approach each project with a focus on the big picture, and planning is important. First we need to define your business goals, your ideal users, and their use cases so that we can gauge the project and best build the best interface possible for your business.'
+					text: 'Each project should be approached with a focus on the big picture. First we need to define your business goals along with your ideal users and their use cases. This approach will allow us to best build the best interface possible for your business.'
 				},
 				{
 					label: "DESIGN",
@@ -79,7 +79,7 @@
 					transition: 'topRightToMiddle',
 					zoomAnimation: 'Two',
 					imageClass: 'designImage',
-					text: 'Any custom built website requires a custom design that is tailored for your specific audience and industry. Simple, clean, and effective user interface designs paired with a great user experience that delivers results.'
+					text: 'Any custom built website requires a custom design that is tailored for your specific audience and industry. Simple, clean, and effective user interface designs that are paired with a great user experience, leading to happy customers that deliver results.'
 				},
 				{
 					label: "DEVELOPMENT",
@@ -89,17 +89,17 @@
 					transition: 'topMiddleToMiddle',
 					zoomAnimation: 'Three',
 					imageClass: 'developmentImage',
-					text: 'With over 5+ years of professional full stack web development experience, I have a mindset that anything and everything is possible! I have a ton of experience with both "single page applications" web apps, and tranditional multi-page websites.'
+					text: 'Over 5+ years of professional full stack web development experience. Excellent communication and grasp of technical abilities. Efficient and well experienced with building both "single page applications" web apps and tranditional multi-page websites.'
 				},
 				{
-					label: "DOMAINS & HOSTING",
+					label: "SETUP",
 					left: 'calc(50% - 1px)',
 					top: 'calc(50% + 44px)',
 					hovering: false,
 					transition: 'bottomRightToMiddle',
 					zoomAnimation: 'Four',
 					imageClass: 'domainsImage',
-					text: 'A website needs to live somewhere and it also needs an access point. Whether you already own the domain, or you need one, I help plug your new website to the domain of your choice. I can also help with providing affordable hosting the website.'
+					text: 'A website needs to live somewhere and it also needs a name. Whether you already own the domain, or you need one, I help plug your new website to the domain of your choice. I can also help with providing affordable hosting the website.'
 				},
 				{
 					label: "MARKETING",
@@ -119,7 +119,7 @@
 					transition: 'leftToMiddle',
 					zoomAnimation: 'Six',
 					imageClass: 'contentImage',
-					text: 'A website is never done, it should always be improved over time. We can make small tweaks to the design or update the site for seasonal and holiday sales. Whatever changes you want to make over time, we can make it happen quickly and easily.'
+					text: 'A website is never done, it should always be improved over time. Small tweaks to the design can make a big impact. Update the site for seasonal and holiday sales. Whatever changes you want to make over time, we can make it happen quickly and easily.'
 				}
 			]
 		}),

@@ -28,7 +28,7 @@
 			<div id="activeWork" v-if="workActive" :class="{ activeServiceBigSize: activeWorkBigSize }">
 				<!--<div id="activeWorkTitle"><div class="title">{{activeWork.title}}</div></div>-->
 				<div id="activeWorkDescription">
-					<div class="workLogo" :style="{ 'background-image': activeWork.logoImage.src, top: activeWork.logoImage.top, left: activeWork.logoImage.left, width: activeWork.logoImage.width, height: activeWork.logoImage.height }"></div>
+					<div class="workLogo" :class="activeWork.logoClass"></div>
 					<div class="text" :style="{ top: activeWork.descriptionTop }" v-html="activeWork.description"></div>
 				</div>
 				<div v-if="!isMobile" id="activeWorkImages" style="display: none;">
@@ -68,12 +68,7 @@
 					hovering: false,
 					description: 'I currently work full time at Seagate. I have mostly worked on a world class single page web application used for managing a RAID storage system.<br><br>Provided leadership of a UI team of 2 others managing an existing interface, adding features and fixing bugs before releases. For about 2 of those years, was the lead architect and technical developer of building a completely re-designed and modernized version of the interface.<br><br>I am now currently working on a new exciting project. I am mostly doing work on the backend, while also offering guidance and leadership to our a 3 person UI team.',
 					descriptionTop: '205px',
-					logoImage: {
-						src: 'url(/img/logo.png)',
-						width: '200px',
-						height: '200px',
-						top: '60px'
-					}
+					logoClass: 'seagateWork'
 				},
 				{
 					title: 'Thrush Designs',
@@ -82,12 +77,7 @@
 					hovering: false,
 					description: 'A Seattle based artist with amazing and creative art products, often plant-based artwork. The site is a portfolio that showcases her various categories of artwork, along with an online store where she can sell her current projects. Includes an administration page where all the site content and orders can be managed.<br><br>This project has not quite been launched "live" yet, as we are still in the process of defining her products and updating her pictures before we link the site to her domain.',
 					descriptionTop: '260px',
-					logoImage: {
-						src: 'url(/img/thrushlogo.png)',
-						width: '400px',
-						height: '75px',
-						top: '153px'
-					}
+					logoClass: 'thrushWork'
 				},
 				{
 					title: 'Koza Customs',
@@ -96,12 +86,7 @@
 					hovering: false,
 					description: 'A custom metal fabrication shop located out of Cedaredge, Colorado. The site features a photo gallery of all his previous work, categorized by their two channels of work: Vehicles and Art. The site also has an online store, where users can buy his various vehicle and/or artwork products. This particular site uses PayPal for the checkout process. The site includes a custom administration page I have built where all the site content, including the slideshow images, reviews, gallery projects, store products, and orders can be managed.<br><br>You can check out this project live over at <a href="https://www.kozacustoms.com">KozaCustoms.com</a>',
 					descriptionTop: '235px',
-					logoImage: {
-						src: 'url(/img/kozalogo.png)',
-						width: '398px',
-						height: '64px',
-						top: '165px'
-					}
+					logoClass: 'kozaWork'
 				},
 				{
 					title: 'In Progress...',
@@ -520,6 +505,30 @@
 		background-size: contain;
 	}
 
+	.seagateWork
+	{
+		background: url(/img/logo.png);
+		width: 200px;
+		height: 200px;
+		top: 60px;
+	}
+
+	.thrushWork
+	{
+		background: url(/img/thrushlogo.png);
+		width: 400px;
+		height: 75px;
+		top: 153px;
+	}
+
+	.kozaWork
+	{
+		background: url(/img/kozalogo.png);
+		width: 398px;
+		height: 64px;
+		top: 165px;
+	}
+
 	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
 		   only screen and (min-height: 300px) and (max-height: 600px) and (orientation: landscape)
 	{
@@ -543,9 +552,8 @@
 		}
 		#activeWorkDescription
 		{
-			left: 65px;
     		top: 50%;
-			width: 255px;
+			width: 253px;
     		height: 289px;
 		}
 		#activeWorkDescription .text
@@ -553,7 +561,7 @@
 			top: 60px !important;
 		    padding: 16px 26px 0px 36px;
 		    left: -15px;
-		    font-size: 10px;
+		    font-size: 7.5px;
 		}
 		#backContainer
 		{
@@ -567,6 +575,24 @@
 			top: 38px;
 		    left: 20px;
 		    font-size: 18px;
+		}
+
+		.seagateWork {
+			width: 75px;
+		    height: 75px;
+		    top: 14px;
+		}
+
+		.thrushWork {
+			width: 110px;
+		    height: 21px;
+		    top: 43px;
+		}
+
+		.kozaWork {
+			width: 110px;
+		    height: 18px;
+		    top: 50px;
 		}
 	}
 </style>
