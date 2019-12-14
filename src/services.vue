@@ -89,7 +89,7 @@
 					transition: 'topMiddleToMiddle',
 					zoomAnimation: 'Three',
 					imageClass: 'developmentImage',
-					text: 'Over 5+ years of professional full stack web development experience. Excellent communication and grasp of technical abilities. Efficient and well experienced with building both "single page applications" web apps and tranditional multi-page websites.'
+					text: 'Over 5+ years of professional full stack web development experience. Excellent communication, professionalism, and technical abilities. Efficient and well experienced with building both "single page applications" web apps and tranditional multi-page websites.'
 				},
 				{
 					label: "SETUP",
@@ -99,7 +99,7 @@
 					transition: 'bottomRightToMiddle',
 					zoomAnimation: 'Four',
 					imageClass: 'domainsImage',
-					text: 'A website needs to live somewhere and it also needs a name. Whether you already own the domain, or you need one, I help plug your new website to the domain of your choice. I can also help with providing affordable hosting the website.'
+					text: 'A website needs to live somewhere and it also needs a name. Whether you already own the domain, or you want/need a new one, I help you navigate this space by plugging your new website to the domain of your choice, along with provide affordable hosting.'
 				},
 				{
 					label: "MARKETING",
