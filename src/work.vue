@@ -66,7 +66,7 @@
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% - 275px)',
 					hovering: false,
-					description: 'I currently work full time at Seagate. I have mostly worked on a world class single page web application used for managing a RAID storage system.<br><br>Provided leadership of a UI team of 2 others managing an existing interface, adding features and fixing bugs before releases. For about 2 of those years, was the lead architect and technical developer of building a completely re-designed and modernized version of the interface.<br><br>I am now currently working on a new exciting project. I am mostly doing work on the backend, while also offering guidance and leadership to our a 3 person UI team.',
+					description: 'I have been working full time at Seagate for the last 4+ years. I have worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface.<br><br>I am now working on a new project, helping build out a Node.js microservices backend while also offering guidance and leadership to a 3 person UI team.',
 					descriptionTop: '205px',
 					logoClass: 'seagateWork'
 				},
