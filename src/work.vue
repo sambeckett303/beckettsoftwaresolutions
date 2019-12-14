@@ -561,7 +561,7 @@
 			top: 60px !important;
 		    padding: 16px 26px 0px 36px;
 		    left: -15px;
-		    font-size: 7.5px;
+		    font-size: 7px;
 		}
 		#backContainer
 		{
