@@ -118,6 +118,7 @@
 		.blogPostContainer
 		{
 			margin-top: 67px;
+			margin-bottom: 67px;
 		}
 		.mainBlogImage
 		{

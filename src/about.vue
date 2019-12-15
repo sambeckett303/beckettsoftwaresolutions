@@ -5,7 +5,7 @@
 			<h1 id="aboutTitle">About Me</h1>
 			<div id="aboutWhitePolygon"></div>
 			<p id="aboutMeText">
-				I grew up in a beautiful mountain town called Conifer, Colorado before going to college at University of Colorado at Boulder, graduating with a degree in Computer Science Engineering. During this time, through course projects and internships, I developed an interest in web development, and web based projects have been the majority of my focus. When I'm not coding up websites, you can find me going recklessly fast on my mountain bike or snowboard (depending on the season).
+				I grew up in a beautiful mountain town called Conifer, Colorado before going to college at University of Colorado at Boulder, graduating with a degree in Computer Science Engineering. During this time, through course projects and internships, I developed an interest in web development, and web projects have been the majority of my software focus. When I'm not coding up websites, you can find me going recklessly fast on my mountain bike or snowboard (depending on the season).
 			</p>
 		</div>
 		<div id="triangle" :style="{ top: getTriangleTop() }">
