@@ -32,6 +32,9 @@
 			<div class="downArrowText" v-html="swipeOrScroll()"></div>
 			<div class="downArrow"></div>
 		</div>
+		<div style="display: none;">
+			<img v-for="img in images" :src="img">
+		</div>
 	</div>
 	</transition>
 </template>
@@ -40,6 +43,20 @@
 	export default
 	{
 		name: 'home',
+		data() {
+			return {
+				images: [
+					"/img/hexagon-01.png",
+					"/img/hexagon-02.png",
+					"/img/hexagon-03.png",
+					"/img/hexagon-04.png",
+					"/img/advertisingIcon.png",
+					"/img/contentIcon.png",
+					"/img/developmentIcon.png",
+					"/img/domainsIcon.png"
+				]
+			};
+		},
 		methods:
 		{
 			swipeOrScroll: function()
