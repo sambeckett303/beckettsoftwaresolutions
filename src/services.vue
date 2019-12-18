@@ -683,12 +683,12 @@
 		}
 		#activeService .text
 		{
-			top: 150px;
+			top: 140px;
 			font-size: 11px;
 		}
 		.serviceImage
 		{
-			top: 90px;
+			top: 75px;
 			padding-right: 10px;
 		}
 		.planningImage
