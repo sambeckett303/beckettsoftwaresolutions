@@ -568,7 +568,7 @@
 			width: 87px;
     		height: 100px;
     		bottom: 90px;
-    		left: 70px;
+    		right: -10px;
 		}
 		#backContainer .text
 		{
