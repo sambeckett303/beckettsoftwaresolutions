@@ -17,6 +17,7 @@
 			<div class="downArrowText">BLOG</div>
 			<div class="downArrow"></div>
 		</div>
+		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 	</transition>
 </template>

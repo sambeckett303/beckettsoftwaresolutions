@@ -43,6 +43,7 @@
 			<div class="downArrowText">REVIEWS</div>
 			<div class="downArrow"></div>
 		</div>
+		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 	</transition>
 </template>
@@ -66,7 +67,7 @@
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% - 275px)',
 					hovering: false,
-					description: 'I have been working full time at Seagate for the last 4+ years. I have worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface.<br><br>I am now working on a new project, helping build out a Node.js microservices backend while also offering guidance and leadership to a 3 person UI team.',
+					description: 'I have been working full time at Seagate for the last 4+ years. I have worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface used for monitoring and configuring data storage systems.<br><br>I am now working on a new project, helping build out a Node.js microservices backend for a unified data experience.',
 					descriptionTop: '205px',
 					logoClass: 'seagateWork'
 				},

@@ -20,6 +20,7 @@
 			<div class="downArrowText">ABOUT</div>
 			<div class="downArrow"></div>
 		</div>
+		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 	</transition>
 </template>
@@ -42,7 +43,7 @@
 				{
 					active: false,
 					left: '50%',
-					text: "I effin love my new website. Sam made a kickass admin page to go along with my kickass website and I love it and stuff woo hoo!",
+					text: "Sam created the website for our business from the ground up and made it completely customized to the specifications that we requested. We had a lot of frustration attempting to create our own site through a template and things have been MUCH easier since we started working with Sam. He is wonderful to work with and is always receptive and helpful if there is something that we have a question about. Overall, he did a fantastic job and we would highly recommend him.",
 					clientName: "Brad White",
 					clientCompany: "Koza Customs"
 				}
@@ -116,27 +117,28 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 350px;
-		height: 400px;
+		width: 550px;
+		height: 600px;
 		background: url(/img/hexagon-04.png) no-repeat;
 		background-size: contain;
 		z-index: 1;
 
 		.text
 		{
-			width: 265px;
+		    width: 429px;
 		    position: absolute;
-		    top: 100px;
+		    top: 164px;
 		    left: 36px;
 		    text-align: center;
+
 		}
 
 		.client
 		{
-			text-align: center;
+		    text-align: center;
 		    position: absolute;
-		    width: 329px;
-		    top: 250px;
+		    width: 515px;
+		    top: 420px;
 		}
 	}
 	.leftArrow
@@ -150,6 +152,7 @@
 		left: 50px;
 		top: 50%;
 		transform: translateY(-50%);
+		z-index: 2;
 	}
 	.rightArrow
 	{
@@ -162,6 +165,7 @@
 		right: 50px;
 		top: 50%;
 		transform: translateY(-50%);
+		z-index: 2;
 	}
 	.leftRev-enter-active, .leftRev-leave-active
 	{

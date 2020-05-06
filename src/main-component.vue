@@ -37,6 +37,9 @@
 				</div>
 			</div>
 		</transition>
+		<div style="display: none;">
+			<img v-for="img in imagesToLoad" :src="img">
+		</div>
 	</div>
 </template>
 
@@ -45,6 +48,7 @@
 	{
 		name: "main-component",
 		data: () => ({
+			showWorkTogetherIcon: false,
 			scrolling: false,
 			menuActive: false,
 			dist: null,
@@ -98,10 +102,16 @@
 					top: 'calc(50% - 100px)',
 					hovering: false
 				}
+			],
+			imagesToLoad: [
+
 			]
 		}),
 		methods:
 		{
+			goToQuote: function() {
+				this.$router.push('/quote');
+			},
 			handleScroll: function(event)
 			{
 				if (!this.scrolling)
@@ -169,6 +179,7 @@
 					case "services":
 						if (upOrDown == "up")
 						{
+							this.showWorkTogetherIcon = false;
 							this.$router.push("/");
 						}
 						else
@@ -219,6 +230,7 @@
 					case "":
 						if (upOrDown == "down")
 						{
+							this.showWorkTogetherIcon = true;
 							this.$router.push("/services");
 						}
 						break;
@@ -588,6 +600,20 @@
 				-o-transform: scale(0.6);
 				-ms-transform: scale(0.6);
 			}
+		}
+	}
+	.letsWorkTogether {
+		position: absolute;
+		background: #605eff;
+		bottom: 10px;
+        left: 10px;
+        border-radius: 8px;
+
+		.logo {
+			background: url(/img/workTogether.png) no-repeat;
+			background-size: contain;
+			width: 60px;
+			height: 60px;
 		}
 	}
 </style>

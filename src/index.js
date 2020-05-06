@@ -8,6 +8,7 @@ import Reviews from './reviews.vue';
 import Blog from './blog.vue';
 import BlogPost from './blog-post.vue';
 import About from './about.vue';
+import Quote from './quote.vue';
 
 const routes = [
 	{ path: '/', component: Home },
@@ -16,6 +17,7 @@ const routes = [
 	{ path: '/reviews', component: Reviews },
 	{ path: '/about', component: About },
 	{ path: '/blog', component: Blog },
+	{ path: '/quote', component: Quote },
 	{ path: '/blog/:title', component: BlogPost, props: true }
 ];
 

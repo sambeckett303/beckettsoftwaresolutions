@@ -53,7 +53,8 @@
 					"/img/advertisingIcon.png",
 					"/img/contentIcon.png",
 					"/img/developmentIcon.png",
-					"/img/domainsIcon.png"
+					"/img/domainsIcon.png",
+					"/img/workTogether.png"
 				]
 			};
 		},
@@ -651,6 +652,7 @@
 		{
 			width: 260px;
 			font-size: 15px;
+			margin-top: 8px;
 		}
 	}
 
@@ -910,6 +912,7 @@
 		{
 			font-size: 12px;
 			width: 215px;
+			margin-top: 8px;
 		}
 		.homeButton
 		{
