@@ -10,7 +10,7 @@
     "dev": "nodemon -e js,vue,json --watch src --exec npm run startdev"
   },
   "engines": {
-    "node": "8.12.0"
+    "node": "16.19.1"
   },
   "author": "Sam Beckett",
   "license": "ISC",
