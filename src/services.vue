@@ -1,12 +1,12 @@
 <template>
 	<transition name="bounce">
 	<div class="pageContainer">
-		<div class="pageTitle">My Services</div>
+		<div class="pageTitle">What Makes a Successful Website?</div>
 		<hexagon-grid page="services"></hexagon-grid>
 		<div id="servicesContainer"
 			:class="[zoomAnimation, anchorOutOfSight]"
 			:style="{ transform: zoomToHold }">
-			<div id="centerPiece">YOUR<br>SUCCESSFUL<br>WEBSITE</div>
+			<!--<div id="centerPiece">YOUR<br>SUCCESSFUL<br>WEBSITE</div>-->
 			<div
 				v-for="serviceHexagon in serviceHexagons"
 				class="serviceHexagon"
@@ -70,7 +70,7 @@
 					transition: 'topLeftToMiddle',
 					zoomAnimation: 'One',
 					imageClass: 'planningImage',
-					text: 'Each project should be approached with a focus on the big picture. First we need to define your business goals along with your ideal users and their use cases. This approach will allow us to best build the best interface possible for your business.'
+					text: 'Each project should be approached with a focus on the big picture. Defining your business goals along with a portfolio of ideal users and their use cases is crucial to design and build the best website possible for your business.'
 				},
 				{
 					label: "DESIGN",
@@ -90,7 +90,7 @@
 					transition: 'topMiddleToMiddle',
 					zoomAnimation: 'Three',
 					imageClass: 'developmentImage',
-					text: 'Over 5+ years of professional full stack web development experience. Excellent communication, professionalism, and technical abilities. Efficient and well experienced with building both "single page applications" web apps and tranditional multi-page websites.'
+					text: 'Drag-and-drop website builders with pre-made templates can only take a website so far, some custom designs and functionality need to be hand-built by a professional developer. Ideally, a developer with excellent communication, professionalism, and extensive technical experience and abilities will lead to more successful results.'
 				},
 				{
 					label: "SETUP",
@@ -100,7 +100,7 @@
 					transition: 'bottomRightToMiddle',
 					zoomAnimation: 'Four',
 					imageClass: 'domainsImage',
-					text: 'A website needs to live somewhere and it also needs a name. Whether you already own the domain, or you want/need a new one, I help you navigate this space by plugging your new website to the domain of your choice, along with provide affordable hosting.'
+					text: 'A website needs to live somewhere and it also needs a name. Whether you already own a domain, or you want/need a new one, someone needs to be able to navigate this space by porting a website to the domain, along with providing hosting.'
 				},
 				{
 					label: "MARKETING",
@@ -110,7 +110,7 @@
 					transition: 'bottomLeftToMiddle',
 					zoomAnimation: 'Five',
 					imageClass: 'advertisingImage',
-					text: 'Nowadays, online marketing is critical. Expand your reach by adding my marketing package to your website. This includes my Search Engine Optimization (SEO) services, along with help advertising your services on the right platform (Google, Facebook, and/or Instagram).'
+					text: 'Nowadays, online marketing is critical to gaining more business. Two of the most important marketing factors includes Search Engine Optimization (SEO) along with advertising your services on the right platform(s) (Google, Facebook, and/or Instagram).'
 				},
 				{
 					label: "SUPPORT",
@@ -120,7 +120,7 @@
 					transition: 'leftToMiddle',
 					zoomAnimation: 'Six',
 					imageClass: 'contentImage',
-					text: 'A website is never done, it should always be improved over time. Small tweaks to the design can make a big impact. Update the site for seasonal and holiday sales. Whatever changes you want to make over time, we can make it happen quickly and easily.'
+					text: 'A website is never done, it should always be improved over time. Most successful websites are frequently updated. Small tweaks to the design can end up making a big impact. Update the site for seasonal and holiday sales.'
 				}
 			]
 		}),
