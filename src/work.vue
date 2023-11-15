@@ -453,7 +453,7 @@
 		background: url(/img/hexagon-04.png) no-repeat;
 		background-size: contain;
 		position: absolute;
-		bottom: 25px;
+		bottom: 66px;
 		right: -20px ;
 		transform: translateX(-50%);
 		cursor: pointer;
