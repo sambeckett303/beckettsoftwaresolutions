@@ -49,12 +49,7 @@
 		name: "main-component",
 		data: () => ({
 			showWorkTogetherIcon: false,
-			scrolling: false,
 			menuActive: false,
-			dist: null,
-			startX: null,
-			startY: null,
-			startTime: null,
 			threshold: 100, //required min distance traveled to be considered swipe
 		    restraint: 100, // maximum distance allowed at the same time in perpendicular direction
 		    allowedTime: 300, // maximum time allowed to travel that distance
@@ -112,65 +107,10 @@
 			goToQuote: function() {
 				this.$router.push('/quote');
 			},
-			handleScroll: function(event)
-			{
-				if (!this.scrolling)
-				{
-					if (event.deltaY < 0 || event.deltaY > 0)
-					{
-						if (event.deltaY < 0)
-						{
-							this.setPage("up");
-						}
-						else
-						{
-							this.setPage("down");
-						}
-						this.scrolling = true;
-						this.scrollTimeout = setTimeout(function() {
-							this.scrolling = false;
-						}.bind(this), 1000);
-					}
-				}
-			},
 			menuSelected: function(menuItem)
 			{
 				this.$router.push(menuItem.page);
 				this.menuActive = false;
-			},
-			handleTouchStart: function(event)
-			{
-				var touchobj = event.changedTouches[0]
-		        this.dist = 0
-		        this.startX = touchobj.pageX
-		        this.startY = touchobj.pageY
-		        this.startTime = new Date().getTime() // record time when finger first makes contact with surface
-		        //event.preventDefault();
-			},
-			handleTouchEnd: function(event)
-			{
-				var touchobj = event.changedTouches[0]
-		        var distX = touchobj.pageX - this.startX // get horizontal dist traveled by finger while in contact with surface
-		        var distY = touchobj.pageY - this.startY // get vertical dist traveled by finger while in contact with surface
-		        var elapsedTime = new Date().getTime() - this.startTime // get time elapsed
-		        var swipedir = '';
-		        if (elapsedTime <= this.allowedTime){ // first condition for awipe met
-		            if (Math.abs(distX) >= this.threshold && Math.abs(distY) <= this.restraint){ // 2nd condition for horizontal swipe met
-		                swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-		            }
-		            else if (Math.abs(distY) >= this.threshold && Math.abs(distX) <= this.restraint){ // 2nd condition for vertical swipe met
-		                swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-		            }
-		        }
-		        if (swipedir == 'up')
-		        {
-		        	this.setPage("down");
-		        }
-		        else if (swipedir == 'down')
-		        {
-		        	this.setPage("up");
-		        }
-		        //event.preventDefault();
 			},
 			setPage: function(upOrDown)
 			{
@@ -236,18 +176,6 @@
 						break;
 				}
 			}
-		},
-		created: function()
-		{
-			window.addEventListener('wheel', this.handleScroll);
-			window.addEventListener('touchstart', this.handleTouchStart.bind(this), {passive: false});
-			window.addEventListener('touchend', this.handleTouchEnd.bind(this), {passive: false});
-		},
-		destroyed: function()
-		{
-			window.removeEventListener('wheel', this.handleScroll);
-			window.removeEventListener('touchstart', this.handleTouchStart);
-			window.removeEventListener('touchend', this.handleTouchEnd);
 		}
 	}
 </script>

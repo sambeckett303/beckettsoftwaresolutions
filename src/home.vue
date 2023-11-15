@@ -1,5 +1,5 @@
 <template>
-	<!--<transition name="fadeDown">-->
+	<transition name="fadeDown">
 	<div class="pageContainer">
 		<div id="bg"></div>
 		<div id="triangle" :style="{ top: getTriangleTop() }">
@@ -9,7 +9,7 @@
 		</div>
 		<div class="homeContainer">
 			<div class="headline">
-				SIMPLE DESIGNS &<br>
+				SIMPLE DESIGNS,<br>
 				AMAZING EXPERIENCES
 			</div>
 			<div class="headline2">Hello! I am Sam Beckett, a software developer from Colorado who is passionate about building beautiful and unique websites that <b>deliver results</b>.</div>
@@ -38,7 +38,7 @@
 			<img v-for="img in images" :src="img">
 		</div>
 	</div>
-	<!--</transition>-->
+	</transition>
 </template>
 
 <script>

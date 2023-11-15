@@ -380,7 +380,7 @@
 		animation: bounce-in .5s;
 	}
 	.bounce-leave-active {
-	 	animation: bounce-in .5s reverse;
+	 	animation: bounce-out .3s;
 	}
 	@keyframes bounce-in {
 		0% {
@@ -390,19 +390,28 @@
 			-o-transform: scale(0);
 			-ms-transform: scale(0);
 		}
-		50% {
-			transform: scale(1.5);
-			-webkit-transform: scale(1.5);
-			-moz-transform: scale(1.5);
-			-o-transform: scale(1.5);
-			-ms-transform: scale(1.5);
-		}
 		100% {
 			transform: scale(1);
 			-webkit-transform: scale(1);
 			-moz-transform: scale(1);
 			-o-transform: scale(1);
 			-ms-transform: scale(1);
+		}
+	}
+	@keyframes bounce-out {
+		0% {
+			transform: scale(1);
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-o-transform: scale(1);
+			-ms-transform: scale(1);
+		}
+		100% {
+			transform: scale(0);
+			-webkit-transform: scale(0);
+			-moz-transform: scale(0);
+			-o-transform: scale(0);
+			-ms-transform: scale(0);
 		}
 	}
 </style>

@@ -288,7 +288,7 @@
 	.leftRightSwipe
 	{
 		position: fixed;
-    	bottom: 0px;
+    	bottom: 120px;
 	    left: 50%;
 	    width: 40px;
 	    height: 40px;

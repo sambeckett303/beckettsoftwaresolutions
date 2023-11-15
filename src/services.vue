@@ -1,5 +1,5 @@
 <template>
-	<!--<transition name="bounce">-->
+	<transition name="bounce">
 	<div class="pageContainer">
 		<div class="pageTitle">Services</div>
 		<hexagon-grid page="services"></hexagon-grid>
@@ -51,7 +51,7 @@
 		</div>
 		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
-	<!--</transition>-->
+	</transition>
 </template>
 
 <script>

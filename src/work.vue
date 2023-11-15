@@ -343,7 +343,7 @@
 	#activeWorkDescription
 	{
 	    position: absolute;
-	    left: 50%;
+	    left: calc(50% + 5px);
 	    top: 50%;
 	    background: url(/img/hexagon-04.png) no-repeat;
 	    background-size: contain;
@@ -470,7 +470,7 @@
 	.leftRightSwipe
 	{
 		position: fixed;
-    	bottom: 60px;
+    	bottom: 100px;
 	    left: 50%;
 	    width: 40px;
 	    height: 40px;
@@ -551,7 +551,7 @@
 
 	.seagateWork
 	{
-		background: url(/img/logo.png);
+		background: url(/img/logo.png) no-repeat;
 		width: 200px;
 		height: 200px;
 		top: 60px;
@@ -559,7 +559,7 @@
 
 	.thrushWork
 	{
-		background: url(/img/thrushlogo.png);
+		background: url(/img/thrushlogo.png) no-repeat;
 		width: 400px;
 		height: 75px;
 		top: 153px;
@@ -567,7 +567,7 @@
 
 	.kozaWork
 	{
-		background: url(/img/kozalogo.png);
+		background: url(/img/kozalogo.png) no-repeat;
 		width: 398px;
 		height: 64px;
 		top: 165px;
@@ -597,21 +597,22 @@
 		#activeWorkDescription
 		{
     		top: 50%;
-			width: 253px;
-    		height: 289px;
+			width: calc(100vw - 23px);
+    		height: calc(100vw + 30px);
 		}
 		#activeWorkDescription .text
 		{
-			top: 60px !important;
-		    padding: 16px 26px 0px 36px;
-		    left: -15px;
-		    font-size: 7px;
+			top: 50% !important;
+			left: 50%;
+			transform: translate(-50%, -50%);
+    		width: calc(100vw - 85px);
+			font-size: 10px;
 		}
 		#backContainer
 		{
 			width: 87px;
     		height: 100px;
-    		bottom: 90px;
+    		bottom: 150px;
     		right: -10px;
 		}
 		#backContainer .text
@@ -624,19 +625,30 @@
 		.seagateWork {
 			width: 75px;
 		    height: 75px;
-		    top: 14px;
+			top: 40px;
 		}
 
 		.thrushWork {
-			width: 110px;
-		    height: 21px;
-		    top: 43px;
+			width: 164px;
+			height: 30px;
+			top: 72px;
 		}
 
 		.kozaWork {
-			width: 110px;
-		    height: 18px;
-		    top: 50px;
+			width: 136px;
+    		height: 22px;
+			top: 74px;
+		}
+	}
+	@media only screen and (min-width: 100px) and (max-width: 400) {
+		#activeWorkDescription .text {
+			font-size: 12px;
+		}
+	}
+
+	@media only screen and (min-width: 100px) and (max-width: 475) {
+		#activeWorkDescription .text {
+			font-size: 14px;
 		}
 	}
 </style>
