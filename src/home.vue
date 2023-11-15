@@ -1,5 +1,5 @@
 <template>
-	<transition name="fadeDown">
+	<!--<transition name="fadeDown">-->
 	<div class="pageContainer">
 		<div id="bg"></div>
 		<div id="triangle" :style="{ top: getTriangleTop() }">
@@ -29,14 +29,16 @@
 		</div>
 		<div v-if="showButton()" class="primaryButton homeButton">Let's Chat!</div>
 		<div class="downArrowArea">
-			<div class="downArrowText" v-html="swipeOrScroll()"></div>
-			<div class="downArrow"></div>
+			<div class="selectableCircle" @click="$router.push('/services')">
+				<div class="downArrowText">TAP</div>
+				<div class="downArrow"></div>
+			</div>
 		</div>
 		<div style="display: none;">
 			<img v-for="img in images" :src="img">
 		</div>
 	</div>
-	</transition>
+	<!--</transition>-->
 </template>
 
 <script>
@@ -60,17 +62,6 @@
 		},
 		methods:
 		{
-			swipeOrScroll: function()
-			{
-				if (window.innerWidth <= 375)
-				{
-					return 'SWIPE&nbsp;FAST';
-				}
-				else
-				{
-					return 'SCROLL';
-				}
-			},
 			showButton: function()
 			{
 				if (window.innerWidth <= 375)
@@ -196,12 +187,12 @@
 						return window.innerHeight - 110 + 'px';
 					}
 				}
-				else if (window.innerWidth <= 415)
+				else if (window.innerWidth <= 667)
 				{
 					// portrait mobile
 					return window.innerHeight - 70 + 'px';
 				}
-				if (window.innerWidth < 1060)
+				if (window.innerWidth <= 1060)
 				{
 					return window.innerHeight - 110 + 'px';
 				}
@@ -222,12 +213,12 @@
 					// Landscape mobile
 					var height = '35';
 				}
-				else if (window.innerWidth <= 415)
+				else if (window.innerWidth <= 667)
 				{
 					// Portrait mobile
 					var height = '60';
 				}
-				else if (window.innerWidth < 1060)
+				else if (window.innerWidth <= 1060)
 				{
 					var height = '100';
 				}
@@ -323,23 +314,37 @@
 		bottom: 12px;
 		left: 50%;
 		transform: translateX(-50%);
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
 	}
 
 	.downArrowText
 	{
 		font-size: 10px;
-		color: #FFFFFF;
+		color: black;
 	    position: absolute;
 	    left: 50%;
     	transform: translateX(-50%);
+		top: 8px;
 	}
 
 	.downArrow
 	{
 		width: 50px;
 		height: 50px;
-		background: url(/img/downWhite.png) no-repeat;
+		background: url(/img/down.png) no-repeat;
 		background-size: contain;
+		position: relative;
+		top: 4px;
 	}
 
 	@media only screen and (min-width: 770px) and (max-width: 1060px) {
@@ -347,6 +352,13 @@
 		{
 			top: 80px;
 			bottom: 110px;
+		}
+
+		.pageTitle
+		{
+			top: 70px;
+			padding: 8px 15px;
+			font-size: 21px;
 		}
 
 		#whitePolygon
@@ -380,11 +392,26 @@
 		}
 	}
 
+	@media only screen and (min-width: 135px) and (max-width: 570px) {
+		.pageTitle
+		{
+			top: 70px;
+			padding: 8px 15px;
+			font-size: 21px;
+		}
+	}
+
 	@media only screen and (min-width: 575px) and (max-width: 770px) {
 		#bg 
 		{
 			top: 35px;
 			bottom: 110px;
+		}
+		.pageTitle
+		{
+			top: 70px;
+			padding: 8px 15px;
+			font-size: 21px;
 		}
 	}
 
@@ -1048,6 +1075,12 @@
 		    top: 19%;
 		    width: 250px;
 		    height: 250px;
+		}
+	}
+
+	@media only screen and (min-width: 1060px) {
+		.downArrowArea .selectableCircle {
+			top: -20px;
 		}
 	}
 </style>

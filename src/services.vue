@@ -1,11 +1,11 @@
 <template>
-	<transition name="bounce">
+	<!--<transition name="bounce">-->
 	<div class="pageContainer">
-		<div class="pageTitle">What Makes a Successful Website?</div>
+		<div class="pageTitle">Services</div>
 		<hexagon-grid page="services"></hexagon-grid>
 		<div id="servicesContainer"
-			:class="[zoomAnimation, anchorOutOfSight]"
-			:style="{ transform: zoomToHold }">
+			:class="[panAnimation, anchorOutOfSight]"
+			:style="{ transform: zoomToHold, '-webkit-transform': zoomToHold }">
 			<!--<div id="centerPiece">YOUR<br>SUCCESSFUL<br>WEBSITE</div>-->
 			<div
 				v-for="serviceHexagon in serviceHexagons"
@@ -26,7 +26,7 @@
 		<transition :name="activeTransition">
 			<div id="activeService"
 				v-if="serviceActive"
-				:class="{ activeServiceAnchored: serviceAnchored, activeServiceBigSize: serviceSized }">
+				:class="{ activeServiceAnchored: serviceAnchored }">
 				<div class="title">{{activeService.label}}</div>
 				<div class="serviceImage" :class="[activeService.imageClass]"></div>
 				<div class="text">{{activeService.text}}</div>
@@ -38,12 +38,20 @@
 			</div>
 		</transition>
 		<div class="downArrowArea">
-			<div class="downArrowText">WORK</div>
-			<div class="downArrow"></div>
+			<div class="selectableCircle" @click="$router.push('/work')">
+				<div class="downArrowText">WORK</div>
+				<div class="downArrow"></div>
+			</div>
+		</div>
+		<div class="upArrowArea">
+			<div class="selectableCircle" @click="$router.push('/')">
+				<div class="upArrowText">HOME</div>
+				<div class="upArrow"></div>
+			</div>
 		</div>
 		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
-	</transition>
+	<!--</transition>-->
 </template>
 
 <script>
@@ -55,7 +63,7 @@
 			serviceActive: false,
 			activeTransition: 'topLeftToMiddle',
 			zoomToHold: '',
-			zoomAnimation: '',
+			panAnimation: '',
 			serviceAnchored: false,
 			backAnchored: false,
 			serviceSized: false,
@@ -63,62 +71,62 @@
 			serviceHexagons:
 			[
 				{
-					label: "PLANNING",
+					label: "1. PLANNING",
 					left: 'calc(50% - 167px)',
 					top: 'calc(50% - 244px)',
 					hovering: false,
 					transition: 'topLeftToMiddle',
-					zoomAnimation: 'One',
+					panAnimation: 'One',
 					imageClass: 'planningImage',
 					text: 'Each project should be approached with a focus on the big picture. Defining your business goals along with a portfolio of ideal users and their use cases is crucial to design and build the best website possible for your business.'
 				},
 				{
-					label: "DESIGN",
+					label: "2. DESIGN",
 					left: 'calc(50% - 3px)',
 					top: 'calc(50% - 243px)',
 					hovering: false,
 					transition: 'topRightToMiddle',
-					zoomAnimation: 'Two',
+					panAnimation: 'Two',
 					imageClass: 'designImage',
 					text: 'Any custom built website requires a custom design that is tailored for your specific audience and industry. Simple, clean, and effective user interface designs that are paired with a great user experience, leading to happy customers that deliver results.'
 				},
 				{
-					label: "DEVELOPMENT",
+					label: "3. DEVELOPMENT",
 					left: 'calc(50% + 79px)',
 					top: 'calc(50% - 100px)',
 					hovering: false,
 					transition: 'topMiddleToMiddle',
-					zoomAnimation: 'Three',
+					panAnimation: 'Three',
 					imageClass: 'developmentImage',
 					text: 'Drag-and-drop website builders with pre-made templates can only take a website so far, some custom designs and functionality need to be hand-built by a professional developer. Ideally, a developer with excellent communication, professionalism, and extensive technical experience and abilities will lead to more successful results.'
 				},
 				{
-					label: "SETUP",
+					label: "4. SETUP",
 					left: 'calc(50% - 1px)',
 					top: 'calc(50% + 44px)',
 					hovering: false,
 					transition: 'bottomRightToMiddle',
-					zoomAnimation: 'Four',
+					panAnimation: 'Four',
 					imageClass: 'domainsImage',
 					text: 'A website needs to live somewhere and it also needs a name. Whether you already own a domain, or you want/need a new one, someone needs to be able to navigate this space by porting a website to the domain, along with providing hosting.'
 				},
 				{
-					label: "MARKETING",
+					label: "5. MARKETING",
 					left: 'calc(50% - 165px)',
 					top: 'calc(50% + 43px)',
 					hovering: false,
 					transition: 'bottomLeftToMiddle',
-					zoomAnimation: 'Five',
+					panAnimation: 'Five',
 					imageClass: 'advertisingImage',
 					text: 'Nowadays, online marketing is critical to gaining more business. Two of the most important marketing factors includes Search Engine Optimization (SEO) along with advertising your services on the right platform(s) (Google, Facebook, and/or Instagram).'
 				},
 				{
-					label: "SUPPORT",
+					label: "6. SUPPORT",
 					left: 'calc(50% - 246px)',
 					top: 'calc(50% - 100px)',
 					hovering: false,
 					transition: 'leftToMiddle',
-					zoomAnimation: 'Six',
+					panAnimation: 'Six',
 					imageClass: 'contentImage',
 					text: 'A website is never done, it should always be improved over time. Most successful websites are frequently updated. Small tweaks to the design can end up making a big impact. Update the site for seasonal and holiday sales.'
 				}
@@ -139,57 +147,26 @@
 			{
 				this.activeService = serviceHexagon;
 				this.activeTransition = serviceHexagon.transition;
-				this.zoomAnimation = 'zoomOutAnimation' + serviceHexagon.zoomAnimation;
+				this.panAnimation = 'panAnimation' + serviceHexagon.panAnimation;
+				this.serviceActive = true;
 				setTimeout(function() {
-					this.serviceActive = true;
-					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 700) ||
-						(window.innerWidth > window.innerHeight && window.innerHeight <= 700))
-					{
-						this.zoomToHold = 'scale(0.45)';
-					}
-					else
-					{
-						this.zoomToHold = 'scale(0.6)';
-					}
-					setTimeout(function() {
-						this.serviceAnchored = true;
-						this.backAnchored = true;
-						this.serviceSized = true;
-						setTimeout(function() {
-							this.zoomToHold = '';
-							this.zoomAnimation = '';
-							this.anchorOutOfSight = 'anchorOutOfSight';
-						}.bind(this), 500);
-					}.bind(this), 500)
+					this.backAnchored = true;
+					this.anchorOutOfSight = 'anchorOutOfSight';
+					this.panAnimation = '';
+				}.bind(this), 750);
+				setTimeout(function() {
+					this.serviceAnchored = true;
 				}.bind(this), 500);
 			},
-			backToServices: function()
-			{
-				this.serviceSized = false;
+			backToServices: function() {
+				this.backAnchored = false;
+				this.panAnimation = 'panInAnimation' + this.activeService.panAnimation;
+				this.anchorOutOfSight = '';
+				this.serviceActive = false;
 				setTimeout(function() {
-					this.backAnchored = false;
-					this.zoomAnimation = 'zoomInAnimation' + this.activeService.zoomAnimation;
-					this.anchorOutOfSight = '';
-					if ((window.innerHeight > window.innerWidth && window.innerWidth <= 700) ||
-						(window.innerWidth > window.innerHeight && window.innerHeight <= 700))
-					{
-						this.zoomToHold = 'scale(0.45)';
-					}
-					else
-					{
-						this.zoomToHold = 'scale(0.6)';
-					}
-					setTimeout(function() {
-						this.serviceAnchored = false;
-						this.serviceActive = false;
-						setTimeout(function() {
-							this.zoomToHold = '';
-						}.bind(this), 740);
-						setTimeout(function() {
-							this.zoomAnimation = '';
-						}.bind(this), 1400);
-					}.bind(this), 10);
-				}.bind(this), 500);
+					this.serviceAnchored = false;
+					this.panAnimation = '';
+				}.bind(this), 750);
 			}
 		},
 		components:
@@ -226,7 +203,7 @@
 		background-size: contain;
 		width: 600px;
 	    height: 690px;
-	    transform: translate(-50%, -50%) scale(0.8);
+	    transform: translate(-50%, -50%);
 	    transition: all .5s ease;
 
 	    .title
@@ -335,41 +312,35 @@
 		transform: scale(1.2);
 		z-index: 2;
 	}
-	.zoomOutAnimationOne
+	.panAnimationOne
 	{
-		animation: zoomout .5s,
-					pandownleft 1s;
-		animation-delay: 0s, .5s;
+		animation: pandownleft .75s;
+		-webkit-animation: pandownleft .75s
 	}
-	.zoomOutAnimationTwo
+	.panAnimationTwo
 	{
-		animation: zoomout .5s,
-					panintwo 1s;
-		animation-delay: 0s, .5s;
+		animation: panintwo .75s;
+		-webkit-animation: panintwo .75s
 	}
-	.zoomOutAnimationThree
+	.panAnimationThree
 	{
-		animation: zoomout .5s,
-					paninthree 1s;
-		animation-delay: 0s, .5s;
+		animation: paninthree .75s;
+		-webkit-animation: paninthree .75s
 	}
-	.zoomOutAnimationFour
+	.panAnimationFour
 	{
-		animation: zoomout .5s,
-					paninfour 1s;
-		animation-delay: 0s, .5s;
+		animation: paninfour .75s;
+		-webkit-animation: paninfour .75s
 	}
-	.zoomOutAnimationFive
+	.panAnimationFive
 	{
-		animation: zoomout .5s,
-					paninfive 1s;
-		animation-delay: 0s, .5s;
+		animation: paninfive .75;
+		-webkit-animation: paninfive .75s
 	}
-	.zoomOutAnimationSix
+	.panAnimationSix
 	{
-		animation: zoomout .5s,
-					paninsix 1s;
-		animation-delay: 0s, .5s;
+		animation: paninsix .75s;
+		-webkit-animation: paninsix .75s
 	}
 	@keyframes pandownleft {
 		0% {
@@ -545,41 +516,35 @@
 	{
 		right: 25px;
 	}
-	.zoomInAnimationOne
+	.panInAnimationOne
 	{
-		animation: panbackone .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbackone .75s;
+		-webkit-animation: panbackone .75s;
 	}
-	.zoomInAnimationTwo
+	.panInAnimationTwo
 	{
-		animation: panbacktwo .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbacktwo .75s;
+		-webkit-animation: panbacktwo .75s;
 	}
-	.zoomInAnimationThree
+	.panInAnimationThree
 	{
-		animation: panbackthree .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbackthree .75s;
+		-webkit-animation: panbackthree .75s;
 	}
-	.zoomInAnimationFour
+	.panInAnimationFour
 	{
-		animation: panbackfour .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbackfour .75s;
+		-webkit-animation: panbackfour .75s;
 	}
-	.zoomInAnimationFive
+	.panInAnimationFive
 	{
-		animation: panbackfive .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbackfive .75s;
+		-webkit-animation: panbackfive .75s;
 	}
-	.zoomInAnimationSix
+	.panInAnimationSix
 	{
-		animation: panbacksix .75s,
-					zoomin .5s;
-		animation-delay: 0s, .75s;
+		animation: panbacksix .75s;
+		-webkit-animation: panbacksix .75s;
 	}
 	
 	@keyframes panbackone {
@@ -643,36 +608,75 @@
 		bottom: 2px;
 		left: 50%;
 		transform: translateX(-50%);
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
 	}
 
-	.downArrowText
+	.upArrowArea
+	{
+		position: absolute;
+		bottom: 2px;
+		right: 5px;
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
+	}
+
+	.downArrowText, .upArrowText
 	{
 		font-size: 10px;
 		color: #000000;
 	    position: absolute;
 	    left: 50%;
     	transform: translateX(-50%);
+		top: 7px;
 	}
 
-	.downArrow
+	.downArrow, .upArrow
 	{
 		width: 50px;
 		height: 50px;
 		background: url(/img/down.png) no-repeat;
 		background-size: contain;
 	}
+	.upArrow {
+		transform: rotate(180deg);
+		position: relative;
+		top: 6px;
+	}
 
 	@media only screen and (min-width: 300px) and (max-width: 700px) and (orientation: portrait),
 		   only screen and (min-height: 300px) and (max-height: 700px) and (orientation: landscape)
 	{
+		.backTransition-enter-to, .backTransition-leave
+		{
+			right: 10px !important;
+		}
 		#servicesContainer
 		{
-			transform: scale(.6);
+			transform: scale(.7);
 		}
 		#activeService
 		{
-			width: 304px;
-		    height: 352px;
+			width: 375px;
+		    height: 424px;
 		    margin-left: 5px;
 		}
 		#activeService .title
@@ -685,7 +689,7 @@
 		#activeService .text
 		{
 			top: 140px;
-			font-size: 11px;
+			font-size: 14px;
 		}
 		.serviceImage
 		{
@@ -726,7 +730,11 @@
 		{
 			width: 100px;
 			height: 100px;
-			bottom: 15px;
+			bottom: 50px;
+			right: 10px;
+		}
+		.backAnchored
+		{
 			right: 10px;
 		}
 		#backContainer .text

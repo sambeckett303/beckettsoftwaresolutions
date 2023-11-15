@@ -1,7 +1,7 @@
 <template>
 	<transition name="bounce">
 	<div class="pageContainer">
-		<div class="pageTitle">My Work</div>
+		<div class="pageTitle">Work</div>
 		<hexagon-grid page="work"></hexagon-grid>
 		<div id="workContainer"
 			:class="[zoomAnimation, anchorOutOfSight]"
@@ -40,8 +40,16 @@
 			</div>
 		</transition>
 		<div class="downArrowArea">
-			<div class="downArrowText">REVIEWS</div>
-			<div class="downArrow"></div>
+			<div class="selectableCircle" @click="$router.push('/about')">
+				<div class="downArrowText">ABOUT</div>
+				<div class="downArrow"></div>
+			</div>
+		</div>
+		<div class="upArrowArea">
+			<div class="selectableCircle" @click="$router.push('/services')">
+				<div class="upArrowText">SERVICES</div>
+				<div class="upArrow"></div>
+			</div>
 		</div>
 		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
@@ -90,12 +98,12 @@
 					logoClass: 'kozaWork'
 				},
 				{
-					title: 'In Progress...',
+					title: 'North Pole Lighting',
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% + 75px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'There is always a new project I am working on. Want to work together? Contact me today!'
+					description: 'A simple but effective one-page website for a holiday season lighting company. Includes the ability for potential customers to easily email the business owner with a quote request.<br><br>You can check out this project live over at <a href="https://www.northpolelightingcompany.com">NorthPoleLightingCompany.com</a>'
 				},
 				{
 					title: 'In Progress...',
@@ -487,23 +495,58 @@
 		bottom: 2px;
 		left: 50%;
 		transform: translateX(-50%);
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
 	}
 
-	.downArrowText
+	.upArrowArea
+	{
+		position: absolute;
+		bottom: 2px;
+		right: 5px;
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
+	}
+
+	.downArrowText, .upArrowText
 	{
 		font-size: 10px;
 		color: #000000;
 	    position: absolute;
 	    left: 50%;
     	transform: translateX(-50%);
+		top: 7px;
 	}
 
-	.downArrow
+	.downArrow, .upArrow
 	{
 		width: 50px;
 		height: 50px;
 		background: url(/img/down.png) no-repeat;
 		background-size: contain;
+	}
+	.upArrow {
+		transform: rotate(180deg);
+		position: relative;
+		top: 6px;
 	}
 
 	.seagateWork

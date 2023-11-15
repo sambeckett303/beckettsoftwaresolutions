@@ -1,7 +1,7 @@
 <template>
 	<transition name="bounce">
 	<div class="pageContainer">
-		<div class="pageTitle">My Blog</div>
+		<div class="pageTitle">Blog</div>
 		<hexagon-grid page="blog"></hexagon-grid>
 		<!-- For now, we hide this
 		<div
@@ -40,6 +40,12 @@
 			</div>
 		</transition>
 		<div v-if="isMobile" class="leftRightSwipe"></div>
+		<div class="upArrowArea">
+			<div class="selectableCircle" @click="$router.push('/about')">
+				<div class="upArrowText">ABOUT</div>
+				<div class="upArrow"></div>
+			</div>
+		</div>
 	</div>
 	</transition>
 </template>
@@ -333,5 +339,44 @@
 		    bottom: 0;
 		    transform: scale(.67);
 		}
+	}
+	.upArrowArea
+	{
+		position: absolute;
+		bottom: 2px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		.selectableCircle {
+			position: relative;
+			cursor: pointer;
+  			top: -4px;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			background: white;
+			border: 2px solid #ec99ec;
+		}
+	}
+
+	.upArrowText
+	{
+		font-size: 10px;
+		color: #000000;
+	    position: absolute;
+	    left: 50%;
+    	transform: translateX(-50%);
+		top: 7px;
+	}
+
+	.upArrow
+	{
+		width: 50px;
+		height: 50px;
+		background: url(/img/down.png) no-repeat;
+		background-size: contain;
+		transform: rotate(180deg);
+		position: relative;
+		top: 6px;
 	}
 </style>

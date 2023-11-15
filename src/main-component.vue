@@ -194,7 +194,7 @@
 						}
 						else
 						{
-							this.$router.push("/reviews");
+							this.$router.push("/about");
 						}
 						break;
 					case "reviews":
@@ -210,7 +210,7 @@
 					case "about":
 						if (upOrDown == "up")
 						{
-							this.$router.push("/reviews");
+							this.$router.push("/work");
 						}
 						else
 						{
@@ -371,6 +371,7 @@
 	    padding: 15px 30px;
 	    font-size: 41px;
 	    font-family: 'Russo One', sans-serif;
+		max-width: calc(100% - 71px);
 	}
 
 	.pageContainer
@@ -442,32 +443,36 @@
 
 	@media only screen and (min-width: 1060px) {
 		@keyframes zoomout {
-			0% {
+			from {
 				transform: scale(1);
-				-webkit-transform: scale(1);
 				-moz-transform: scale(1);
 				-o-transform: scale(1);
 				-ms-transform: scale(1);
 			}
-			100% {
+			to {
 				transform: scale(0.6);
-				-webkit-transform: scale(0.6);
 				-moz-transform: scale(0.6);
 				-o-transform: scale(0.6);
 				-ms-transform: scale(0.6);
 			}
 		}
-		@keyframes zoomin {
+		@-webkit-keyframes zoomout {
 			0% {
-				transform: scale(0.6);
+				-webkit-transform: scale(1);
+			}
+			100% {
 				-webkit-transform: scale(0.6);
+			}
+		}
+		@keyframes zoomin {
+			from {
+				transform: scale(0.6);
 				-moz-transform: scale(0.6);
 				-o-transform: scale(0.6);
 				-ms-transform: scale(0.6);
 			}
-			100% {
+			to {
 				transform: scale(1);
-				-webkit-transform: scale(1);
 				-moz-transform: scale(1);
 				-o-transform: scale(1);
 				-ms-transform: scale(1);
@@ -476,33 +481,15 @@
 	}
 
 	@media only screen and (max-width: 1060px) {
-		@keyframes zoomout {
-			0% {
-				transform: scale(1);
-				-webkit-transform: scale(1);
-				-moz-transform: scale(1);
-				-o-transform: scale(1);
-				-ms-transform: scale(1);
-			}
-			100% {
-				transform: scale(0.6);
-				-webkit-transform: scale(0.6);
-				-moz-transform: scale(0.6);
-				-o-transform: scale(0.6);
-				-ms-transform: scale(0.6);
-			}
-		}
 		@keyframes zoomin {
-			0% {
+			from {
 				transform: scale(0.6);
-				-webkit-transform: scale(0.6);
 				-moz-transform: scale(0.6);
 				-o-transform: scale(0.6);
 				-ms-transform: scale(0.6);
 			}
-			100% {
+			to {
 				transform: scale(1);
-				-webkit-transform: scale(1);
 				-moz-transform: scale(1);
 				-o-transform: scale(1);
 				-ms-transform: scale(1);
@@ -563,26 +550,26 @@
 		    font-size: 13px;
 		}
 
-		.pageTitle
-		{
-			top: 70px;
-			padding: 8px 15px;
-			font-size: 21px;
-		}
 		@keyframes zoomout {
 			0% {
-				transform: scale(0.6);
-				-webkit-transform: scale(0.6);
-				-moz-transform: scale(0.6);
-				-o-transform: scale(0.6);
-				-ms-transform: scale(0.6);
+				transform: scale(0.7);
+				-moz-transform: scale(0.7);
+				-o-transform: scale(0.7);
+				-ms-transform: scale(0.7);
 			}
 			100% {
 				transform: scale(0.45);
-				-webkit-transform: scale(0.45);
 				-moz-transform: scale(0.45);
 				-o-transform: scale(0.45);
 				-ms-transform: scale(0.45);
+			}
+		}
+		@-webkit-keyframes zoomout {
+			0% {
+				-webkit-transform: scale(0.7);
+			}
+			100% {
+				-webkit-transform: scale(0.45);
 			}
 		}
 		@keyframes zoomin {
@@ -594,11 +581,11 @@
 				-ms-transform: scale(0.45);
 			}
 			100% {
-				transform: scale(0.6);
-				-webkit-transform: scale(0.6);
-				-moz-transform: scale(0.6);
-				-o-transform: scale(0.6);
-				-ms-transform: scale(0.6);
+				transform: scale(0.7);
+				-webkit-transform: scale(0.7);
+				-moz-transform: scale(0.7);
+				-o-transform: scale(0.7);
+				-ms-transform: scale(0.7);
 			}
 		}
 	}

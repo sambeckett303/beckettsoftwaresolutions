@@ -374,6 +374,7 @@
 		position: absolute;
 		background: url(/img/hexagon-01.png);
 		background-size: contain;
+		z-index: -1;
 	}
 	.bounce-enter-active {
 		animation: bounce-in .5s;
