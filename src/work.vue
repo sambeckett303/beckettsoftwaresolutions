@@ -112,7 +112,7 @@
 					left: 'calc(50% - 12px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'I recently finished a contract position at Universal Studios where I was writing backend Node.js code that supported the theme parks and resorts in Orlando, Hollywood, and Japan.<br><br>This was an excellent experience and got exposed to several new technologies and processes.',
+					description: 'I recently finished a contract position at Universal Studios where I was writing backend Node.js code that supported the theme parks and resorts in Orlando, Hollywood, and Japan.<br><br>This was an excellent experience and got exposed to several new technologies and processes. I worked on several projects including Third Tier Express, Mobile Food and Drink Orders, and repo containerization migration.',
 					logoClass: 'universalWork'
 				}
 			],
