@@ -75,7 +75,7 @@
 					top: 'calc(50% - 150px)',
 					left: 'calc(50% - 275px)',
 					hovering: false,
-					description: 'I have been working full time at Seagate for the last 4+ years. I have worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface used for monitoring and configuring data storage systems.<br><br>I am now working on a new project, helping build out a Node.js microservices backend for a unified data experience.',
+					description: 'I worked full time at Seagate for 7 years. I worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface used for monitoring and configuring data storage systems.<br><br>I am now working on a new project, helping build out a Node.js microservices backend for a unified data experience.',
 					descriptionTop: '205px',
 					logoClass: 'seagateWork'
 				},
@@ -103,15 +103,17 @@
 					left: 'calc(50% + 75px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'A simple but effective one-page website for a holiday season lighting company. Includes the ability for potential customers to easily email the business owner with a quote request.<br><br>You can check out this project live over at <a href="https://www.northpolelightingcompany.com">NorthPoleLightingCompany.com</a>'
+					description: 'A simple but effective one-page website for a holiday season lighting company that features some fun graphics and showcases some of their work. Includes the ability for potential customers to easily email the business owner with a quote request.<br><br>You can check out this project live over at <a href="https://www.northpolelightingcompany.com">NorthPoleLightingCompany.com</a>',
+					logoClass: 'nplcWork'
 				},
 				{
-					title: 'In Progress...',
+					title: 'Universal Studios',
 					top: '50%',
 					left: 'calc(50% - 12px)',
 					hovering: false,
 					descriptionTop: '260px',
-					description: 'There is always a new project I am working on. Want to work together? Contact me today!'
+					description: 'I recently finished a contract position at Universal Studios where I was writing backend Node.js code that supported the theme parks and resorts in Orlando, Hollywood, and Japan.<br><br>This was an excellent experience and got exposed to several new technologies and processes.',
+					logoClass: 'universalWork'
 				}
 			],
 			isMobile: false,
@@ -571,6 +573,20 @@
 		width: 398px;
 		height: 64px;
 		top: 165px;
+	}
+
+	.nplcWork {
+		background: url(/img/NPLC.png) no-repeat;
+		width: 254px;
+		height: 146px;
+		top: 109px;
+	}
+
+	.universalWork {
+		background: url(/img/Universal_Parks_and_Resorts_logo.webp) no-repeat;
+		width: 254px;
+		height: 146px;
+		top: 109px;
 	}
 
 	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
