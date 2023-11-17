@@ -1,15 +1,29 @@
 <template>
 	<transition name="bounce">
 	<div>
-		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build Something Awesome!</div>
+		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
 		<div class="quoteContainer">
 			<div class="quoteLabel">Tell me a little about your project:</div>
-			<textarea rows="10" cols="100" class="quoteText"></textarea>
+			<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
 			<div class="quoteLabel">Email Address:</div>
-			<input class="quoteText"></input>
+			<input class="quoteText" v-model="email">
+			<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
 			<div style="margin-bottom: 50px;">
-				<div class="button">SUBMIT</div>
+				<div class="button" @click="submitQuoteRequest">SUBMIT</div>
 			</div>
+		</div>
+		<div class="fadeBg" v-if="sending || success || showErrorDialog"></div>
+		<div class="circleContainer" v-if="sending">
+			<svg fill="none" class="circle-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+				<circle class="circle" cx="50" cy="50" r="45" />
+			</svg>
+		</div>
+		<div class="dialogContainer" v-if="success">
+			<div class="text">Successfully sent request. We will be in touch shortly!</div>
+			<div class="button" @click="closeSuccess">BACK TO HOME</div>
+		</div>
+		<div class="dialogContainer" v-if="showErrorDialog">
+			<div class="text">Oops.. Sorry, there was an unexpected error. Please contact sambeckett303@gmail.com</div>
 		</div>
 	</div>
 	</transition>
@@ -19,13 +33,51 @@
 	export default
 	{
 		name: 'quote',
-		beforeMount: function()
-		{
-			$('body').css('overflow-y', 'scroll');
-			
+		data: () => ({
+			sending: false,
+			success: false,
+			showErrorDialog: false,
+			showMissingFieldsMessage: false,
+			email: '',
+			description: ''
+		}),
+		methods: {
+			submitQuoteRequest() {
+				if (!this.email || !this.description) {
+					this.showMissingFieldsMessage = true;
+					return;
+				} else {
+					this.showMissingFieldsMessage = false;
+				}
+				this.sending = true;
+				$.ajax(
+				{
+					url: '/quote',
+					method: 'POST',
+					data: {
+						email: this.email,
+						description: this.description
+					},
+					success: this.handleSuccess.bind(this),
+					error: this.handleError.bind(this)
+				});
+			},
+			handleSuccess() {
+				this.sending = false;
+				this.success = true;
+			},
+			closeSuccess() {
+				this.$router.push('/');
+			},
+			handleError() {
+				this.sending = false;
+				this.showErrorDialog = true;
+			},
 		},
-		beforeDestroy: function()
-		{
+		beforeMount() {
+			$('body').css('overflow-y', 'scroll');	
+		},
+		beforeDestroy() {
 			$('body').css('overflow-y', 'hidden');
 		}
 	}
@@ -60,7 +112,7 @@
 
 	.quoteContainer {
 		position: relative;
-    	top: 230px;
+    	top: 121px;
     	width: 80%;
 		margin: auto;
     	color: #6f6868;
@@ -71,28 +123,80 @@
     	}
 	}
 
-	@media only screen and (min-width: 437px) {
-		.quoteContainer {
-			top: 111px;
+	.fadeBg {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: black;
+		opacity: .6;
+	}
+
+	.circleContainer {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.circle-svg {
+		--_circle-radius: 45px;
+		--_svg-width: 100px;
+		--_stroke-width: 10px; /* svg-width - (circle-radius * 2) */
+
+		width: var(--_svg-width);
+		height: var(--_svg-width);
+
+		stroke: white;
+		/*   stroke-linecap: round; */
+		stroke-width: var(--_stroke-width);
+
+		stroke-dashoffset: 1;
+		stroke-dasharray: 1 1000;
+
+		animation: loader 1500ms infinite linear, spin 3000ms infinite linear;
+	}
+
+	@keyframes loader {
+		0% {
+			stroke-dashoffset: 1;
+			stroke-dasharray: 1 1000;
+		}
+
+		100% {
+			stroke-dashoffset: calc(var(--_circle-radius) * -2 * 3.1415);
+			stroke-dasharray: calc(var(--_circle-radius) * 2 * 3.1415) 1000;
 		}
 	}
 
-	@media only screen and (min-width: 600px) {
-		.quoteContainer {
-			top: 290px;
+	@keyframes spin {
+		0% {
+			rotate: 0deg;
+		}
+
+		100% {
+			rotate: 360deg;
 		}
 	}
 
-	@media only screen and (min-width: 868px) {
+	.dialogContainer {
+		width: calc(100vw - 60px);
+		max-width: 350px;
+		background: white;
+		position: absolute;
+		z-index: 1000;
+		padding: 20px;
+		border-radius: 10px;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+
+	@media only screen and (min-width: 1060px) {
 		.quoteContainer {
 			top: 250px;
 		}
-	}
-		
-
-	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
-		   only screen and (min-height: 300px) and (max-height: 600px) and (orientation: landscape)
-	{
-		
 	}
 </style>
