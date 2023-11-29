@@ -1,16 +1,16 @@
 {
-  "name": "BeckettSoftwareSolutions",
+  "name": "beckettsoftwaresolutions",
   "version": "1.0.0",
   "description": "Portfolio site for Sam Beckett.",
   "main": "start",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "startdev": "npm run build && node -r dotenv/config server.js",
-    "start": "node server.js",
+    "start": "node -r dotenv/config server.js",
     "dev": "nodemon -e js,vue,json --watch src --exec npm run startdev"
   },
   "engines": {
-    "node": "16.19.1"
+    "node": "16.20.2"
   },
   "author": "Sam Beckett",
   "license": "ISC",

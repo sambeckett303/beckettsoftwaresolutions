@@ -5,10 +5,10 @@
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const express = require('express'),
-	nodemailer = require('nodemailer'),
+    nodemailer = require('nodemailer'),
     bodyParser = require('body-parser'),
-	port = process.env.PORT || 8080,
-	app = express();
+    port = process.env.PORT || 8080,
+    app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //               Configure Nodemailer
 // -----------------------------------------------
 const oauth2Client = new OAuth2(
-	process.env.OAUTH_CLIENTID,
-	process.env.OAUTH_CLIENT_SECRET,
-	'https://developers.google.com/oauthplayground' // Redirect URL
+    process.env.OAUTH_CLIENTID,
+    process.env.OAUTH_CLIENT_SECRET,
+    'https://developers.google.com/oauthplayground' // Redirect URL
 );
 oauth2Client.setCredentials({
     refresh_token:  process.env.OAUTH_REFRESH_TOKEN
@@ -26,8 +26,8 @@ oauth2Client.setCredentials({
 const accessToken = oauth2Client.getAccessToken();
   
 let transporter = nodemailer.createTransport({
-	service: 'gmail',
-	auth: {
+    service: 'gmail',
+    auth: {
         type: 'OAuth2',
         user: process.env.MAIL_USERNAME,
         pass: process.env.MAIL_PASSWORD,
@@ -35,7 +35,7 @@ let transporter = nodemailer.createTransport({
         clientSecret: process.env.OAUTH_CLIENT_SECRET,
         accessToken,
         refreshToken: process.env.OAUTH_REFRESH_TOKEN
-	}
+    }
 });
   
 transporter.on('token', token => {
@@ -60,7 +60,8 @@ app.set('views', './dist/views');
 // -----------------------------------------------
 
 app.get('/', function (req, res) {
-	res.render('index.html');
+    console.log('got request for index.html page');
+    res.render('index.html');
 });
 
 app.post('/quote', (req, res, next) => {
