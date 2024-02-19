@@ -1,5 +1,4 @@
 <template>
-	<transition name="bounce">
 	<div class="pageContainer">
 		<div class="pageTitle">Services</div>
 		<hexagon-grid page="services"></hexagon-grid>
@@ -51,11 +50,9 @@
 		</div>
 		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
-	</transition>
 </template>
 
 <script>
-	import HexagonGrid from './hexagon-grid.vue';
 	export default
 	{
 		name: 'services',
@@ -168,10 +165,6 @@
 					this.panAnimation = '';
 				}.bind(this), 750);
 			}
-		},
-		components:
-		{
-			HexagonGrid
 		}
 	}
 </script>
@@ -278,35 +271,7 @@
 	    margin-left: 9px;
 	    text-align: center;
 	}
-	.bounce-enter-active {
-		animation: bounce-in .5s;
-	}
-	.bounce-leave-active {
-	 	animation: bounce-out .3s;
-	}
-	@keyframes bounce-in {
-		0% {
-			transform: scale(0);
-			opacity: 0;
-		}
-		50% {
-			transform: scale(1.5);
-		}
-		100% {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
-	@keyframes bounce-out {
-		0% {
-			transform: scale(1);
-			opacity: 1;
-		}
-		100% {
-			transform: scale(0);
-			opacity: 0;
-		}
-	}
+
 	.serviceHexagon.active
 	{
 		transform: scale(1.2);
