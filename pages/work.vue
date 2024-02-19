@@ -269,7 +269,7 @@ export default
 	.fade-enter-active, .fade-leave-active {
 	  transition: opacity .5s;
 	}
-	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+	.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
 	  opacity: 0;
 	}
 	#workContainer
@@ -429,13 +429,13 @@ export default
 		transition: .5s ease all;
 	}
 
-	.workTransition-enter, .workTransition-leave-to
+	.workTransition-enter-from, .workTransition-leave-to
 	{
 		top: -100%;
 		left: 0px;
 	}
 
-	.workTransition-enter-to, .workTransition-leave
+	.workTransition-enter-to, .workTransition-leave-from
 	{
 		top: 0px;
 		left: 0px;

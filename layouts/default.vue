@@ -195,9 +195,13 @@
 	}
 	.slideFromRight-enter-active, .slideFromRight-leave-active
 	{
-		transition: all .5s ease
+		transition: transform .5s ease;
+        -webkit-transition: transform .5s ease;
+		-moz-transition: transform .5s ease;
+		-o-transition: transform .5s ease;
+		-ms-transition: transform .5s ease;
 	}
-	.slideFromRight-enter, .slideFromRight-leave-to
+	.slideFromRight-enter-from, .slideFromRight-leave-to
 	{
 		transform: translateX(100%);
 		-webkit-transform: translateX(100%);
@@ -205,7 +209,7 @@
 		-o-transform: translateX(100%);
 		-ms-transform: translateX(100%);
 	}
-	.slideFromRight-enter-to, .slideFromRight-leave
+	.slideFromRight-enter-to, .slideFromRight-leave-from
 	{
 		transform: translateX(0%);
 		-webkit-transform: translateX(0%);

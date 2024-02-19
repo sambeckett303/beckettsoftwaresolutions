@@ -298,7 +298,7 @@
 	{
 		left: -100%;
 	}
-	.slideInFromLeft-enter-to, .slideInFromLeft-leave
+	.slideInFromLeft-enter-to, .slideInFromLeft-leave-from
 	{
 		left: 0px;
 	}

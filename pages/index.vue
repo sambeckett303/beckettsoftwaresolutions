@@ -289,7 +289,7 @@ export default {
 		transition: opacity .5s ease;
 	}
 
-	.fadeDown-enter, .fadeDown-leave-to
+	.fadeDown-enter-from, .fadeDown-leave-to
 	{
 	  	opacity: 0;
 	}
