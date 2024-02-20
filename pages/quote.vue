@@ -2,7 +2,7 @@
 	<transition name="bounce">
 	<div>
 		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
-		<form>
+		<form name="contact" method="POST" data-netlify="true">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
 				<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
