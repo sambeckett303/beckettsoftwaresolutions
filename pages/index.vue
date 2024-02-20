@@ -1,12 +1,13 @@
 <template>
-	<transition name="fadeDown">
 	<div class="pageContainer">
 		<div id="bg"></div>
-		<div id="triangle" :style="{ top: getTriangleTop() }">
-			<svg :width="getTriangleWidth()" height="230">
-				<polygon :points="getTrianglePoints()" style="fill:#675AFF;"></polygon>
-			</svg>
-		</div>
+		<client-only>
+            <div id="triangle" :style="{ top: getTriangleTop }">
+                <svg :width="getTriangleWidth" height="230">
+                    <polygon :points="getTrianglePoints" style="fill:#675AFF;"></polygon>
+                </svg>
+            </div>
+        </client-only>
 		<div class="homeContainer">
 			<div class="headline">
 				SIMPLE DESIGNS,<br>
@@ -15,230 +16,215 @@
 			<div class="headline2">Hello! I am Sam Beckett, a software developer from Colorado who is passionate about building beautiful and unique websites that <b>deliver results</b>.</div>
 		</div>
 		<div id="whitePolygon"></div>
-		<div
-			v-for="h in homePolygons()"
-			class="homePolygon"
-			:style="{
-				top: h.top,
-				bottom: h.bottom,
-				left: h.left,
-				right: h.right,
-				width: h.size,
-				height: h.size
-			}">
-		</div>
-		<div v-if="showButton()" class="primaryButton homeButton">Let's Chat!</div>
+        <client-only>
+            <div
+                v-for="h in homePolygons()"
+                class="homePolygon"
+                :style="{
+                    top: h.top,
+                    bottom: h.bottom,
+                    left: h.left,
+                    right: h.right,
+                    width: h.size,
+                    height: h.size
+                }">
+            </div>
+        </client-only>
+		<div class="primaryButton homeButton">Let's Chat!</div>
 		<div class="downArrowArea">
 			<div class="selectableCircle" @click="$router.push('/services')">
 				<div class="downArrowText">TAP</div>
 				<div class="downArrow"></div>
 			</div>
 		</div>
-		<div style="display: none;">
-			<img v-for="img in images" :src="img">
-		</div>
 	</div>
-	</transition>
 </template>
 
 <script>
-	export default
-	{
-		name: 'home',
-		data() {
-			return {
-				images: [
-					"/img/hexagon-01.png",
-					"/img/hexagon-02.png",
-					"/img/hexagon-03.png",
-					"/img/hexagon-04.png",
-					"/img/advertisingIcon.png",
-					"/img/contentIcon.png",
-					"/img/developmentIcon.png",
-					"/img/domainsIcon.png",
-					"/img/workTogether.png"
-				]
-			};
-		},
-		methods:
-		{
-			showButton: function()
-			{
-				if (window.innerWidth <= 375)
-				{
-					return false;
-				}
-				else
-				{
-					return true;
-				}
-			},
-			homePolygons: function()
-			{
-				if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
-				{
-					var polygons =
-					[
-						{ top: '80px', right: '42px', size: '65px' },
-						{ bottom: '47px', right: '25px', size: '50px' },
-						{ bottom: '120px', right: '56px', size: '25px' },
-						{ bottom: '37px', right: '140px', size: '30px' }
-					];
-				}
-				else if (window.innerWidth <= 320)
-				{
-					var polygons =
-					[
-						{ top: '75px', right: '25px', size: '65px' },
-						{ top: '50%', right: '22px', size: '50px' },
-						{ bottom: '60px', right: '45px', size: '25px' },
-						{ bottom: '62px', left: '29px', size: '60px' }
-					];
-				}
-				else if (window.innerWidth <= 375)
-				{
-					if (window.innerHeight > 667)
-					{
-						var polygons =
-						[
-							{ top: '73px', right: '23px', size: '95px' },
-							{ top: '317px', right: '22px', size: '50px' },
-							{ bottom: '150px', right: '56px', size: '25px' },
-							{ bottom: '60px', left: '31px', size: '100px' }
-						];
-					}
-					else
-					{
-						var polygons =
-						[
-							{ top: '73px', right: '23px', size: '95px' },
-							{ top: '317px', right: '22px', size: '50px' },
-							{ bottom: '60px', right: '46px', size: '25px' },
-							{ bottom: '60px', left: '31px', size: '100px' }
-						];
-					}
-				}
-				else if (window.innerWidth < 850)
-				{
-					var polygons =
-					[
-						{ top: '95px', right: '30px', size: '95px' },
-						{ top: '317px', right: '22px', size: '50px' },
-						{ bottom: '120px', right: '56px', size: '25px' },
-						{ bottom: '100px', left: '50px', size: '100px' }
-					];
-				}
-				else if (window.innerWidth < 1000)
-				{
-					var polygons =
-					[
-						{ top: '120px', right: '35px', size: '155px' },
-						{ bottom: '270px', right: '75px', size: '84px' },
-						{ bottom: '100px', left: '50%', size: '125px' },
-						{ bottom: '100px', left: '100px', size: '70px' }
-					];
-				}
-				else if (window.innerWidth < 1160)
-				{
-					if (window.innerHeight > 1000)
-					{
-						var polygons =
-						[
-							{ top: '156px', right: '110px', size: '155px' },
-							{ top: '50%', right: '75px', size: '84px' },
-							{ bottom: '200px', right: '27%', size: '150px' },
-							{ bottom: '500px', left: '200px', size: '100px' }
-						];
-					}
-					else
-					{
-						var polygons =
-						[
-							{ top: '156px', right: '110px', size: '155px' },
-							{ top: '317px', right: '75px', size: '84px' },
-							{ top: '450px', right: '135px', size: '125px' },
-							{ top: '500px', right: '500px', size: '70px' }
-						];
-					}
-				}
-				else
-				{
-					var polygons =
-					[
-						{ top: '156px', right: '167px', size: '175px' },
-						{ top: '317px', right: '65px', size: '84px' },
-						{ top: '400px', right: '235px', size: '125px' },
-						{ top: '500px', right: '500px', size: '70px' }
-					];
-				}
-				return polygons;
-			},
-			getTriangleTop: function()
-			{
-				if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
-				{
-					if (window.innerWidth < 700)
-					{
-						// Landscape mobile
-						return window.innerHeight - 35 + 'px';
-					}
-					else
-					{
-						return window.innerHeight - 110 + 'px';
-					}
-				}
-				else if (window.innerWidth <= 667)
-				{
-					// portrait mobile
-					return window.innerHeight - 70 + 'px';
-				}
-				if (window.innerWidth <= 1060)
-				{
-					return window.innerHeight - 110 + 'px';
-				}
-				else
-				{
-					return window.innerHeight - 250 + 'px';
-				}
-			},
-			getTriangleWidth: function()
-			{
-				return window.innerWidth - 30;
-			},
-			getTrianglePoints: function()
-			{
-				var width = window.innerWidth - 30;
-				if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
-				{
-					// Landscape mobile
-					var height = '35';
-				}
-				else if (window.innerWidth <= 667)
-				{
-					// Portrait mobile
-					var height = '60';
-				}
-				else if (window.innerWidth <= 1060)
-				{
-					var height = '100';
-				}
-				else
-				{
-					var height = '230';
-				}
-				return "0,0 " + width.toString() + ",0 " + Math.round(width / 2) + "," + height;
-			}
-		},
-		mounted() {
-		    this.$nextTick(() => {
-		      window.addEventListener('resize', () => {
-		        this.$forceUpdate();
-		      });
-		    });
-		    var pageElement = document.getElementsByClassName('pageContainer')[0];
-		    pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
-		}
-	}
+export default {
+    data() {
+        return { windowWidth: 1000 }
+    },
+    computed: {
+        getTriangleTop: function()
+        {
+            if (process.client) {
+            if (this.windowWidth <= 823 && this.windowWidth > window.innerHeight)
+            {
+                if (this.windowWidth < 700)
+                {
+                    // Landscape mobile
+                    return window.innerHeight - 35 + 'px';
+                }
+                else
+                {
+                    return window.innerHeight - 110 + 'px';
+                }
+            }
+            else if (this.windowWidth <= 667)
+            {
+                // portrait mobile
+                return window.innerHeight - 70 + 'px';
+            }
+            if (this.windowWidth <= 1060)
+            {
+                return window.innerHeight - 110 + 'px';
+            }
+            else
+            {
+                return window.innerHeight - 250 + 'px';
+            }
+            }
+        },
+        getTriangleWidth: function()
+        {
+            if (process.client) {
+            return this.windowWidth - 30;
+            }
+        },
+        getTrianglePoints: function()
+        {
+            if (process.client) {
+            var width = this.windowWidth - 30;
+            if (this.windowWidth <= 823 && this.windowWidth > window.innerHeight)
+            {
+                // Landscape mobile
+                var height = '35';
+            }
+            else if (this.windowWidth <= 667)
+            {
+                // Portrait mobile
+                var height = '60';
+            }
+            else if (this.windowWidth <= 1060)
+            {
+                var height = '100';
+            }
+            else
+            {
+                var height = '230';
+            }
+            return "0,0 " + width.toString() + ",0 " + Math.round(width / 2) + "," + height;
+            }
+        }
+    },
+    methods:
+    {
+        homePolygons: function()
+        {
+            if (process.client) {
+                if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
+                {
+                    var polygons =
+                    [
+                        { top: '80px', right: '42px', size: '65px' },
+                        { bottom: '47px', right: '25px', size: '50px' },
+                        { bottom: '120px', right: '56px', size: '25px' },
+                        { bottom: '37px', right: '140px', size: '30px' }
+                    ];
+                }
+                else if (window.innerWidth <= 320)
+                {
+                    var polygons =
+                    [
+                        { top: '75px', right: '25px', size: '65px' },
+                        { top: '50%', right: '22px', size: '50px' },
+                        { bottom: '60px', right: '45px', size: '25px' },
+                        { bottom: '62px', left: '29px', size: '60px' }
+                    ];
+                }
+                else if (window.innerWidth <= 375)
+                {
+                    if (window.innerHeight > 667)
+                    {
+                        var polygons =
+                        [
+                            { top: '73px', right: '23px', size: '95px' },
+                            { top: '317px', right: '22px', size: '50px' },
+                            { bottom: '150px', right: '56px', size: '25px' },
+                            { bottom: '60px', left: '31px', size: '100px' }
+                        ];
+                    }
+                    else
+                    {
+                        var polygons =
+                        [
+                            { top: '73px', right: '23px', size: '95px' },
+                            { top: '317px', right: '22px', size: '50px' },
+                            { bottom: '60px', right: '46px', size: '25px' },
+                            { bottom: '60px', left: '31px', size: '100px' }
+                        ];
+                    }
+                }
+                else if (window.innerWidth < 850)
+                {
+                    var polygons =
+                    [
+                        { top: '95px', right: '30px', size: '95px' },
+                        { top: '317px', right: '22px', size: '50px' },
+                        { bottom: '120px', right: '56px', size: '25px' },
+                        { bottom: '100px', left: '50px', size: '100px' }
+                    ];
+                }
+                else if (window.innerWidth < 1000)
+                {
+                    var polygons =
+                    [
+                        { top: '120px', right: '35px', size: '155px' },
+                        { bottom: '270px', right: '75px', size: '84px' },
+                        { bottom: '100px', left: '50%', size: '125px' },
+                        { bottom: '100px', left: '100px', size: '70px' }
+                    ];
+                }
+                else if (window.innerWidth < 1160)
+                {
+                    if (window.innerHeight > 1000)
+                    {
+                        var polygons =
+                        [
+                            { top: '156px', right: '110px', size: '155px' },
+                            { top: '50%', right: '75px', size: '84px' },
+                            { bottom: '200px', right: '27%', size: '150px' },
+                            { bottom: '500px', left: '200px', size: '100px' }
+                        ];
+                    }
+                    else
+                    {
+                        var polygons =
+                        [
+                            { top: '156px', right: '110px', size: '155px' },
+                            { top: '317px', right: '75px', size: '84px' },
+                            { top: '450px', right: '135px', size: '125px' },
+                            { top: '500px', right: '500px', size: '70px' }
+                        ];
+                    }
+                }
+                else
+                {
+                    var polygons =
+                    [
+                        { top: '156px', right: '167px', size: '175px' },
+                        { top: '317px', right: '65px', size: '84px' },
+                        { top: '400px', right: '235px', size: '125px' },
+                        { top: '500px', right: '500px', size: '70px' }
+                    ];
+                }
+                return polygons;
+            }
+        }
+    },
+    mounted() {
+        this.windowWidth = window.innerWidth;
+        this.$nextTick(() => {
+            window.addEventListener('resize', () => {
+                this.windowWidth = window.innerWidth;
+            });
+        });
+        
+        var pageElement = document.getElementsByClassName('pageContainer')[0];
+        pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
+    }
+}
 </script>
 
 <style lang="scss">
@@ -303,7 +289,7 @@
 		transition: opacity .5s ease;
 	}
 
-	.fadeDown-enter, .fadeDown-leave-to
+	.fadeDown-enter-from, .fadeDown-leave-to
 	{
 	  	opacity: 0;
 	}
@@ -345,6 +331,36 @@
 		background-size: contain;
 		position: relative;
 		top: 4px;
+	}
+
+    .bounce-enter-active {
+		animation: bounce-in .5s;
+	}
+	.bounce-leave-active {
+	 	animation: bounce-out .3s;
+	}
+	@keyframes bounce-in {
+		0% {
+			transform: scale(0);
+			opacity: 0;
+		}
+		50% {
+			transform: scale(1.5);
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+	@keyframes bounce-out {
+		0% {
+			transform: scale(1);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(0);
+			opacity: 0;
+		}
 	}
 
 	@media only screen and (min-width: 770px) and (max-width: 1060px) {
@@ -1083,4 +1099,10 @@
 			top: -20px;
 		}
 	}
+
+    @media only screen and (max-width: 375px) {
+        .homeButton {
+            display: none;
+        }
+    }
 </style>

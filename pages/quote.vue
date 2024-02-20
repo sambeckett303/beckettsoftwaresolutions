@@ -2,16 +2,18 @@
 	<transition name="bounce">
 	<div>
 		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
-		<div class="quoteContainer">
-			<div class="quoteLabel">Tell me a little about your project:</div>
-			<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
-			<div class="quoteLabel">Email Address:</div>
-			<input class="quoteText" v-model="email">
-			<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
-			<div style="margin-bottom: 50px;">
-				<div class="button" @click="submitQuoteRequest">SUBMIT</div>
+		<form>
+			<div class="quoteContainer">
+				<div class="quoteLabel">Tell me a little about your project:</div>
+				<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
+				<div class="quoteLabel">Email Address:</div>
+				<input class="quoteText" v-model="email">
+				<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
+				<div style="margin-bottom: 50px;">
+					<div class="button" @click="submitQuoteRequest">SUBMIT</div>
+				</div>
 			</div>
-		</div>
+		</form>
 		<div class="fadeBg" v-if="sending || success || showErrorDialog"></div>
 		<div class="circleContainer" v-if="sending">
 			<svg fill="none" class="circle-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -50,17 +52,7 @@
 					this.showMissingFieldsMessage = false;
 				}
 				this.sending = true;
-				$.ajax(
-				{
-					url: '/quote',
-					method: 'POST',
-					data: {
-						email: this.email,
-						description: this.description
-					},
-					success: this.handleSuccess.bind(this),
-					error: this.handleError.bind(this)
-				});
+				// TODO
 			},
 			handleSuccess() {
 				this.sending = false;
@@ -73,17 +65,14 @@
 				this.sending = false;
 				this.showErrorDialog = true;
 			},
-		},
-		beforeMount() {
-			$('body').css('overflow-y', 'scroll');	
-		},
-		beforeDestroy() {
-			$('body').css('overflow-y', 'hidden');
 		}
 	}
 </script>
 
 <style lang="scss">
+	body {
+		overflow: auto !important;
+	}
 	.quoteLabel {
 		font-size: 18px;
 	    color: #6160ff;
@@ -112,7 +101,7 @@
 
 	.quoteContainer {
 		position: relative;
-    	top: 121px;
+    	top: 252px;
     	width: 80%;
 		margin: auto;
     	color: #6f6868;

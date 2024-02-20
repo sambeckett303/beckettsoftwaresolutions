@@ -1,6 +1,6 @@
 <template>
 	<div id="appWrapper">
-		<div id="header">
+		<header id="header">
 			<div id="logoContainer">
 				<div id="logo"></div>
 				<div id="letters"></div>
@@ -8,9 +8,11 @@
 			<div id="menuButtonContainer" @click="menuActive = true">
 				<div id="menuText">MENU</div>
 			</div>
-		</div>
-		<router-view></router-view>
-		<transition name="slideFromRight">
+		</header>
+        <main>
+            <slot />
+        </main>
+        <transition name="slideFromRight">
 			<div v-if="menuActive" id="menuContainer">
 				<div id="menuLogoContainer">
 					<div id="logo"></div>
@@ -37,10 +39,7 @@
 				</div>
 			</div>
 		</transition>
-		<div style="display: none;">
-			<img v-for="img in imagesToLoad" :src="img">
-		</div>
-	</div>
+    </div>
 </template>
 
 <script>
@@ -111,75 +110,10 @@
 			{
 				this.$router.push(menuItem.page);
 				this.menuActive = false;
-			},
-			setPage: function(upOrDown)
-			{
-				switch(this.$route.path.substring(1))
-				{
-					case "services":
-						if (upOrDown == "up")
-						{
-							this.showWorkTogetherIcon = false;
-							this.$router.push("/");
-						}
-						else
-						{
-							this.$router.push("/work");
-						}
-						break;
-					case "work":
-						if (upOrDown == "up")
-						{
-							this.$router.push("/services");
-						}
-						else
-						{
-							this.$router.push("/about");
-						}
-						break;
-					case "reviews":
-						if (upOrDown == "up")
-						{
-							this.$router.push("/work");
-						}
-						else
-						{
-							this.$router.push("/about");
-						}
-						break;
-					case "about":
-						if (upOrDown == "up")
-						{
-							this.$router.push("/work");
-						}
-						else
-						{
-							this.$router.push("/blog");
-						}
-						break;
-					case "blog":
-						if (upOrDown == "up")
-						{
-							this.$router.push("/about");
-						}
-						else
-						{
-							// Hmmm..
-						}
-						break;
-					case "":
-						if (upOrDown == "down")
-						{
-							this.showWorkTogetherIcon = true;
-							this.$router.push("/services");
-						}
-						break;
-				}
 			}
 		}
 	}
 </script>
-
 <style lang="scss">
 	body
 	{
@@ -261,9 +195,13 @@
 	}
 	.slideFromRight-enter-active, .slideFromRight-leave-active
 	{
-		transition: all .5s ease
+		transition: transform .5s ease;
+        -webkit-transition: transform .5s ease;
+		-moz-transition: transform .5s ease;
+		-o-transition: transform .5s ease;
+		-ms-transition: transform .5s ease;
 	}
-	.slideFromRight-enter, .slideFromRight-leave-to
+	.slideFromRight-enter-from, .slideFromRight-leave-to
 	{
 		transform: translateX(100%);
 		-webkit-transform: translateX(100%);
@@ -271,7 +209,7 @@
 		-o-transform: translateX(100%);
 		-ms-transform: translateX(100%);
 	}
-	.slideFromRight-enter-to, .slideFromRight-leave
+	.slideFromRight-enter-to, .slideFromRight-leave-from
 	{
 		transform: translateX(0%);
 		-webkit-transform: translateX(0%);

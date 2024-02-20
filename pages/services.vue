@@ -1,5 +1,4 @@
 <template>
-	<transition name="bounce">
 	<div class="pageContainer">
 		<div class="pageTitle">Services</div>
 		<hexagon-grid page="services"></hexagon-grid>
@@ -51,11 +50,9 @@
 		</div>
 		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
-	</transition>
 </template>
 
 <script>
-	import HexagonGrid from './hexagon-grid.vue';
 	export default
 	{
 		name: 'services',
@@ -168,10 +165,6 @@
 					this.panAnimation = '';
 				}.bind(this), 750);
 			}
-		},
-		components:
-		{
-			HexagonGrid
 		}
 	}
 </script>
@@ -278,35 +271,7 @@
 	    margin-left: 9px;
 	    text-align: center;
 	}
-	.bounce-enter-active {
-		animation: bounce-in .5s;
-	}
-	.bounce-leave-active {
-	 	animation: bounce-out .3s;
-	}
-	@keyframes bounce-in {
-		0% {
-			transform: scale(0);
-			opacity: 0;
-		}
-		50% {
-			transform: scale(1.5);
-		}
-		100% {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
-	@keyframes bounce-out {
-		0% {
-			transform: scale(1);
-			opacity: 1;
-		}
-		100% {
-			transform: scale(0);
-			opacity: 0;
-		}
-	}
+
 	.serviceHexagon.active
 	{
 		transform: scale(1.2);
@@ -403,48 +368,48 @@
 	{
 		transition: all .5s ease;
 	}
-	.topLeftToMiddle-enter-to, .topLeftToMiddle-leave,
-	.topMiddleToMiddle-enter-to, .topMiddleToMiddle-leave,
-	.topRightToMiddle-enter-to, .topRightToMiddle-leave,
-	.bottomRightToMiddle-enter-to, .bottomRightToMiddle-leave,
-	.bottomLeftToMiddle-enter-to, .bottomLeftToMiddle-leave,
-	.leftToMiddle-enter-to, .leftToMiddle-leave
+	.topLeftToMiddle-enter-to, .topLeftToMiddle-leave-from,
+	.topMiddleToMiddle-enter-to, .topMiddleToMiddle-leave-from,
+	.topRightToMiddle-enter-to, .topRightToMiddle-leave-from,
+	.bottomRightToMiddle-enter-to, .bottomRightToMiddle-leave-from,
+	.bottomLeftToMiddle-enter-to, .bottomLeftToMiddle-leave-from,
+	.leftToMiddle-enter-to, .leftToMiddle-leave-from
 	{
 		top: 50%;
 		left: 50%;
 	}
 
-	.topLeftToMiddle-enter, .topLeftToMiddle-leave-to
+	.topLeftToMiddle-enter-from, .topLeftToMiddle-leave-to
 	{
 		top: -100%;
 		left: -100%;
 	}
 
-	.topRightToMiddle-enter, .topRightToMiddle-leave-to
+	.topRightToMiddle-enter-from, .topRightToMiddle-leave-to
 	{
 		top: -100%;
 		left: 100%;
 	}
 
-	.topMiddleToMiddle-enter, .topMiddleToMiddle-leave-to
+	.topMiddleToMiddle-enter-from, .topMiddleToMiddle-leave-to
 	{
 		top: 50%;
 		left: 150%;
 	}
 
-	.bottomRightToMiddle-enter, .bottomRightToMiddle-leave-to
+	.bottomRightToMiddle-enter-from, .bottomRightToMiddle-leave-to
 	{
 		top: 100%;
 		left: 150%;
 	}
 
-	.bottomLeftToMiddle-enter, .bottomLeftToMiddle-leave-to
+	.bottomLeftToMiddle-enter-from, .bottomLeftToMiddle-leave-to
 	{
 		top: 120%;
 		left: -50%;
 	}
 
-	.leftToMiddle-enter, .leftToMiddle-leave-to
+	.leftToMiddle-enter-from, .leftToMiddle-leave-to
 	{
 		top: 50%;
 		left: -50%;
@@ -504,11 +469,11 @@
 	{
 		transition: all .5s ease;
 	}
-	.backTransition-enter, .backTransition-leave-to
+	.backTransition-enter-from, .backTransition-leave-to
 	{
 		right: -200px !important;
 	}
-	.backTransition-enter-to, .backTransition-leave
+	.backTransition-enter-to, .backTransition-leave-from
 	{
 		right: 25px !important;
 	}
@@ -665,7 +630,7 @@
 	@media only screen and (min-width: 300px) and (max-width: 700px) and (orientation: portrait),
 		   only screen and (min-height: 300px) and (max-height: 700px) and (orientation: landscape)
 	{
-		.backTransition-enter-to, .backTransition-leave
+		.backTransition-enter-to, .backTransition-leave-from
 		{
 			right: 10px !important;
 		}

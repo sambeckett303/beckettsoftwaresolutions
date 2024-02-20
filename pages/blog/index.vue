@@ -1,5 +1,4 @@
 <template>
-	<transition name="bounce">
 	<div class="pageContainer">
 		<div class="pageTitle">Blog</div>
 		<hexagon-grid page="blog"></hexagon-grid>
@@ -47,11 +46,9 @@
 			</div>
 		</div>
 	</div>
-	</transition>
 </template>
 
 <script>
-	import HexagonGrid from './hexagon-grid.vue';
 	export default
 	{
 		name: 'blog',
@@ -195,10 +192,6 @@
 				this.startX = null;
 				this.startY = null;
 			}
-		},
-		components:
-		{
-			HexagonGrid
 		}
 	}
 </script>
@@ -305,7 +298,7 @@
 	{
 		left: -100%;
 	}
-	.slideInFromLeft-enter-to, .slideInFromLeft-leave
+	.slideInFromLeft-enter-to, .slideInFromLeft-leave-from
 	{
 		left: 0px;
 	}
