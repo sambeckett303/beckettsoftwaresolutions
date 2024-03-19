@@ -2,7 +2,7 @@
 	<transition name="bounce">
 	<div>
 		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
-		<form ref="contactForm" name="contact" method="POST" data-netlify="true">
+		<form name="contact">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
 				<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
@@ -57,6 +57,9 @@
 				this.sending = true;
 				fetch('/.netlify/functions/contact-submitted', {
 					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
 					body: JSON.stringify({
 						name: this.name,
 						email: this.email,
