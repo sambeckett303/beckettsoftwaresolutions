@@ -2,15 +2,17 @@
 	<transition name="bounce">
 	<div>
 		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
-		<form name="contact" method="POST" data-netlify="true">
+		<form ref="contactForm" name="contact" method="POST" data-netlify="true">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
 				<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
+				<div class="quoteLabel">Name:</div>
+				<input class="quoteText" v-model="name">
 				<div class="quoteLabel">Email Address:</div>
 				<input class="quoteText" v-model="email">
 				<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
 				<div style="margin-bottom: 50px;">
-					<div class="button" @click="submitQuoteRequest">SUBMIT</div>
+					<button class="button" @click="submitQuoteRequest">SUBMIT</button>
 				</div>
 			</div>
 		</form>
@@ -41,10 +43,11 @@
 			showErrorDialog: false,
 			showMissingFieldsMessage: false,
 			email: '',
+			name: '',
 			description: ''
 		}),
 		methods: {
-			submitQuoteRequest() {
+			submitQuoteRequest(e) {
 				if (!this.email || !this.description) {
 					this.showMissingFieldsMessage = true;
 					return;
@@ -52,7 +55,25 @@
 					this.showMissingFieldsMessage = false;
 				}
 				this.sending = true;
-				// TODO
+				fetch('/.netlify/functions/contact-submitted', {
+					method: 'POST',
+					body: JSON.stringify({
+						name: this.name,
+						email: this.email,
+						description: this.description
+					})
+				})
+				.then(response => {
+					if (response.ok) {
+						this.handleSuccess();
+					} else {
+						throw new Error('Network response was not ok.');
+					}
+				})
+				.catch(error => {
+					console.error('There has been a problem with your fetch operation:', error);
+					this.handleError();
+				});
 			},
 			handleSuccess() {
 				this.sending = false;
