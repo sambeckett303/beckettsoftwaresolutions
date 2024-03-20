@@ -2,6 +2,7 @@ const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
     // Set your SendGrid API key
+    console.log('Inside handler function!');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     // Parse the form data
