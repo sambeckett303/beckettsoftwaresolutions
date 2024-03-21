@@ -2,7 +2,7 @@
 	<transition name="bounce">
 	<div>
 		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
-		<form name="contact">
+		<form @submit.prevent="submitQuoteRequest" name="contact">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
 				<textarea rows="10" cols="100" class="quoteText" v-model="description"></textarea>
@@ -12,7 +12,7 @@
 				<input class="quoteText" v-model="email">
 				<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
 				<div style="margin-bottom: 50px;">
-					<button class="button" @click="submitQuoteRequest">SUBMIT</button>
+					<button class="button">SUBMIT</button>
 				</div>
 			</div>
 		</form>
