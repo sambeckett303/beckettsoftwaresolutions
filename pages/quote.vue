@@ -68,6 +68,7 @@
 				})
 				.then(response => {
 					if (response.ok) {
+						console.log('Handling success');
 						this.handleSuccess();
 					} else {
 						throw new Error('Network response was not ok.');
@@ -79,6 +80,7 @@
 				});
 			},
 			handleSuccess() {
+				console.log('inside handleSuccess');
 				this.sending = false;
 				this.success = true;
 			},
