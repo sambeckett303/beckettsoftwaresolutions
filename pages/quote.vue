@@ -55,7 +55,6 @@
 					this.showMissingFieldsMessage = false;
 				}
 				this.sending = true;
-				console.log('SENDING...');
 				fetch('/.netlify/functions/contact-submitted', {
 					method: 'POST',
 					headers: {
@@ -68,9 +67,7 @@
 					})
 				})
 				.then(response => {
-					console.log('GOT RESPONSE');
 					if (response.ok) {
-						console.log('Handling success');
 						this.handleSuccess();
 					} else {
 						throw new Error('Network response was not ok.');
@@ -82,7 +79,6 @@
 				});
 			},
 			handleSuccess() {
-				console.log('inside handleSuccess');
 				this.sending = false;
 				this.success = true;
 			},
