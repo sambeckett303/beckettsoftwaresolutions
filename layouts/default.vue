@@ -2,8 +2,7 @@
 	<div id="appWrapper">
 		<header id="header">
 			<div id="logoContainer">
-				<div id="logo"></div>
-				<div id="letters"></div>
+				<logo></logo>
 			</div>
 			<div id="menuButtonContainer" @click="menuActive = true">
 				<div id="menuText">MENU</div>
@@ -39,6 +38,17 @@
 				</div>
 			</div>
 		</transition>
+		<footer>
+			<div id="footerContainer">
+				<div class="footerLogo">
+					<logo></logo>
+				</div>
+				
+				<div class="credit">
+					<span class="copyright">&copy; Copyright 2025 Eagle Valley Web Works</span>
+				</div>
+			</div>
+		</footer>
     </div>
 </template>
 
@@ -117,15 +127,11 @@
 <style lang="scss">
 	body
 	{
-		overflow: hidden;
 		margin: 0;
 		font-family: 'Open Sans', sans-serif;
 	}
-	#logoContainer
-	{
-		position: absolute;
-		top: 5px;
-		left: 25px;
+	#logoContainer {
+		margin-left: 15px;
 	}
 	#menuLogoContainer
 	{
@@ -144,6 +150,13 @@
 		background-size: contain;
 		display: inline-block;
 	}
+	#header {
+		height: 130px;
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		flex-wrap: wrap;
+	}
 	#letters
 	{
 		width: 200px;
@@ -157,9 +170,8 @@
 	}
 	#menuButtonContainer
 	{
-		position: absolute;
-	    right: 72px;
-    	top: 53px;
+		align-self: center;
+    	margin-right: 15px;
     	z-index: 1;
     	padding: 10px;
     	cursor: pointer;
@@ -242,12 +254,9 @@
 
 	.pageContainer
 	{
-		position:absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		overflow: hidden;
+		position: relative;
+		height: 100vh;
+		width: 100%;
 	}
 
 	.anchorOutOfSight
@@ -361,6 +370,9 @@
 				-ms-transform: scale(1);
 			}
 		}
+		#header {
+			height: 80px;
+		}
 		#logo
 		{
 			width: 56px;
@@ -383,6 +395,9 @@
 	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
 		   only screen and (min-height: 300px) and (max-height: 600px) and (orientation: landscape)
 	{
+		#header {
+			height: 60px;
+		}
 		#menuLogoContainer
 		{
 			top: 75px;
@@ -468,5 +483,18 @@
 			width: 60px;
 			height: 60px;
 		}
+	}
+	#footerContainer {
+		border-top: 4px solid #675AFF;
+		margin-top: 25px;
+	}
+	.footerLogo {
+		width: 400px;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.credit {
+		margin: 25px auto;
+  		width: fit-content;
 	}
 </style>

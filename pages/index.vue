@@ -1,42 +1,73 @@
 <template>
-	<div class="pageContainer">
-		<div id="bg"></div>
-		<client-only>
-            <div id="triangle" :style="{ top: getTriangleTop }">
-                <svg :width="getTriangleWidth" height="230">
-                    <polygon :points="getTrianglePoints" style="fill:#675AFF;"></polygon>
-                </svg>
-            </div>
-        </client-only>
-		<div class="homeContainer">
-			<div class="headline">
-				SIMPLE DESIGNS,<br>
-				AMAZING EXPERIENCES
+	<div >
+		<div class="heroContainer">
+			<div id="background">
+				<div class="homeContainer">
+					<h1 class="headline">
+						<span v-for="(item, index) in 'Hello&nbsp;there!'" class="char" :style="`--char-index: ${index};`">{{ item }}</span>
+					</h1>
+					<div class="headline2">
+						We build innovative web solutions tailored to your unique needs -- Handcrafted websites, superior results, starting at just $100 per month
+					</div>
+				</div>
 			</div>
-			<div class="headline2">Hello! I am Sam Beckett, a software developer from Colorado who is passionate about building beautiful and unique websites that <b>deliver results</b>.</div>
-		</div>
-		<div id="whitePolygon"></div>
-        <client-only>
-            <div
-                v-for="h in homePolygons()"
-                class="homePolygon"
-                :style="{
-                    top: h.top,
-                    bottom: h.bottom,
-                    left: h.left,
-                    right: h.right,
-                    width: h.size,
-                    height: h.size
-                }">
-            </div>
-        </client-only>
-		<div class="primaryButton homeButton">Let's Chat!</div>
-		<div class="downArrowArea">
-			<div class="selectableCircle" @click="$router.push('/services')">
-				<div class="downArrowText">TAP</div>
-				<div class="downArrow"></div>
+			<client-only>
+				<div id="triangle">
+					<svg :width="getTriangleWidth" height="230">
+						<polygon :points="getTrianglePoints" style="fill:#675AFF;"></polygon>
+					</svg>
+				</div>
+			</client-only>
+			<div id="whitePolygon">
+				<snow-hex></snow-hex>
 			</div>
+			<client-only>
+				<div
+					v-for="h in homePolygons()"
+					class="homePolygon"
+					:style="{
+						top: h.top,
+						bottom: h.bottom,
+						left: h.left,
+						right: h.right
+					}">
+					<blue-hex :scale="h.scale"></blue-hex>
+				</div>
+			</client-only>
+			
+			<!--
+			<div class="primaryButton homeButton">Let's Chat!</div>
+			<div class="downArrowArea">
+				<div class="selectableCircle" @click="$router.push('/services')">
+					<div class="downArrowText">TAP</div>
+					<div class="downArrow"></div>
+				</div>
+			</div>
+			-->
 		</div>
+		<div style="margin-top: 35px">
+			<section-title title="Focus on Your Business—We’ll Handle Your Website"></section-title>
+		</div>
+		<div class="whatWeDo sectionTitleHeader">
+			<h1>WHAT WE DO</h1>
+		</div>
+		<p style="margin-top: 55px">
+			At Eagle Valley Web Design, we design and develop high-quality websites for new and growing businesses. Our custom-built sites are optimized for performance,
+			security, and search engines—helping you attract more customers and increase revenue. We also handle ongoing updates and maintenance, so you can focus on
+			building your business while we keep your website running smoothly.
+		</p>
+		<div>
+			<services></services>
+		</div>
+		<offerings></offerings>
+		<portfolio></portfolio>
+		<pricing></pricing>
+		<div class="snowboardingYeti">
+			<img src="/img/CarveOut.webp">
+		</div>
+		<p>
+			We’re here to help small businesses succeed with websites that are fast, reliable, and built for growth. Let’s create something great together—get in touch today!
+		</p>
 	</div>
 </template>
 
@@ -115,9 +146,10 @@ export default {
             if (process.client) {
                 if (window.innerWidth <= 823 && window.innerWidth > window.innerHeight)
                 {
+					// Landscape mobile
                     var polygons =
                     [
-                        { top: '80px', right: '42px', size: '65px' },
+                        { top: '80px', right: '22px', size: '65px' },
                         { bottom: '47px', right: '25px', size: '50px' },
                         { bottom: '120px', right: '56px', size: '25px' },
                         { bottom: '37px', right: '140px', size: '30px' }
@@ -125,6 +157,7 @@ export default {
                 }
                 else if (window.innerWidth <= 320)
                 {
+					// Smallest mobile
                     var polygons =
                     [
                         { top: '75px', right: '25px', size: '65px' },
@@ -137,6 +170,7 @@ export default {
                 {
                     if (window.innerHeight > 667)
                     {
+						// Mobile potrait
                         var polygons =
                         [
                             { top: '73px', right: '23px', size: '95px' },
@@ -147,6 +181,7 @@ export default {
                     }
                     else
                     {
+						// Mobile landscape
                         var polygons =
                         [
                             { top: '73px', right: '23px', size: '95px' },
@@ -158,20 +193,22 @@ export default {
                 }
                 else if (window.innerWidth < 850)
                 {
+					// Big mobile
                     var polygons =
                     [
-                        { top: '95px', right: '30px', size: '95px' },
-                        { top: '317px', right: '22px', size: '50px' },
-                        { bottom: '120px', right: '56px', size: '25px' },
-                        { bottom: '100px', left: '50px', size: '100px' }
+                        { top: '0px', right: '0px', size: '95px' },
+                        { bottom: '50%', right: '0px', size: '50px' },
+                        { bottom: '80px', right: '20px', size: '25px' },
+                        { bottom: '100px', left: '-10px', size: '100px' }
                     ];
                 }
                 else if (window.innerWidth < 1000)
                 {
+					// Tablet
                     var polygons =
                     [
-                        { top: '120px', right: '35px', size: '155px' },
-                        { bottom: '270px', right: '75px', size: '84px' },
+                        { top: '30px', right: '30px', size: '155px' },
+                        { bottom: '270px', right: '205px', size: '84px' },
                         { bottom: '100px', left: '50%', size: '125px' },
                         { bottom: '100px', left: '100px', size: '70px' }
                     ];
@@ -183,7 +220,7 @@ export default {
                         var polygons =
                         [
                             { top: '156px', right: '110px', size: '155px' },
-                            { top: '50%', right: '75px', size: '84px' },
+                            { top: '50%', right: '205px', size: '84px' },
                             { bottom: '200px', right: '27%', size: '150px' },
                             { bottom: '500px', left: '200px', size: '100px' }
                         ];
@@ -193,7 +230,7 @@ export default {
                         var polygons =
                         [
                             { top: '156px', right: '110px', size: '155px' },
-                            { top: '317px', right: '75px', size: '84px' },
+                            { top: '317px', right: '205px', size: '84px' },
                             { top: '450px', right: '135px', size: '125px' },
                             { top: '500px', right: '500px', size: '70px' }
                         ];
@@ -204,30 +241,89 @@ export default {
                     var polygons =
                     [
                         { top: '156px', right: '167px', size: '175px' },
-                        { top: '317px', right: '65px', size: '84px' },
+                        { top: '317px', right: '15px', size: '84px' },
                         { top: '400px', right: '235px', size: '125px' },
                         { top: '500px', right: '500px', size: '70px' }
                     ];
                 }
+				polygons.forEach((pg) => {
+					pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+				});
+				console.log(polygons);
                 return polygons;
             }
         }
     },
     mounted() {
-        this.windowWidth = window.innerWidth;
+        this.windowWidth = document.body.clientWidth; 
         this.$nextTick(() => {
             window.addEventListener('resize', () => {
-                this.windowWidth = window.innerWidth;
+                this.windowWidth = document.body.clientWidth; 
             });
         });
-        
-        var pageElement = document.getElementsByClassName('pageContainer')[0];
-        pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
     }
 }
 </script>
 
 <style lang="scss">
+// * {
+//   outline: 1px solid red;
+// }
+	.sectionTitleHeader {
+		text-align: center;
+		color: #565454;
+	}
+	p {
+		text-align: center;
+		width: 96%;
+		max-width: 25rem;
+		margin: auto;
+		margin-bottom: 1.875rem;
+		margin-top: 1.875rem;
+		color: #656565;
+		display: block;
+		font-size: 1.3rem;
+	}
+	.char {
+		display: inline-block;
+		-webkit-animation-delay: calc(1s + var(--char-index) * 0.1s);
+				animation-delay: calc(1s + var(--char-index) * 0.1s);
+		transition: all 1s calc(1s + var(--char-index) * 0.1s);
+	}
+	.char {
+		-webkit-animation-name: bulge;
+				animation-name: bulge;
+		-webkit-animation-duration: 0.25s;
+				animation-duration: 0.25s;
+	}
+	@-webkit-keyframes bulge {
+		50% {
+			transform: scale(1.5);
+		}
+	}
+	@keyframes bulge {
+		50% {
+			transform: scale(1.5);
+		}
+	}
+
+	.whatWeDo {
+		margin-top: 100px;
+	}
+
+	.heroContainer
+	{
+		position: relative;
+		height: calc(100vh - 65px);
+		width: 100%;
+	}
+	#background {
+		position: relative;
+		height: calc(100% - 295px);
+		width: calc(100% - 30px);
+		left: 15px;
+		background: #675AFF;
+	}
 	#bg
 	{
 		position: absolute;
@@ -239,10 +335,8 @@ export default {
 	}
 	#triangle
 	{
-		position: absolute;
-		left: 15px;
-		right: 15px;
-		bottom: 0px;
+		width: calc(100% - 30px);
+		margin: 0 auto;
 	}
 	.homeContainer
 	{
@@ -266,16 +360,10 @@ export default {
 		position: absolute;
 	    left: 47%;
 	    top: 22%;
-	    background: url(/img/hexagon-03.png) no-repeat;
-	    background-size: contain;
-	    width: 302px;
-	    height: 340px;
 	}
 	.homePolygon
 	{
 		position: absolute;
-		background: url(/img/hexagon-02.png) no-repeat;
-		background-size: contain;
 	}
 	.homeButton
 	{
@@ -363,6 +451,18 @@ export default {
 		}
 	}
 
+	@media only screen and (min-width: 667px) and (max-width: 1060px) {
+		#background {
+			height: calc(100vh - 180px);
+		}
+	}
+
+	@media only screen and (max-width: 667px) {
+		#background {
+			height: calc(100vh - 220px);
+		}
+	}
+
 	@media only screen and (min-width: 770px) and (max-width: 1060px) {
 		#bg 
 		{
@@ -381,8 +481,6 @@ export default {
 		{
 			left: 45%;
 			top: 16%;
-			width: 350px;
-			height: 350px;
 		}
 
 		.homeContainer
@@ -442,8 +540,6 @@ export default {
 		{
 			left: 48%;
 		    top: 37%;
-		    width: 300px;
-		    height: 300px;
 		}
 
 		.homeContainer
@@ -481,8 +577,6 @@ export default {
 		{
 			left: 31%;
 		    top: 49%;
-		    width: 270px;
-		    height: 270px;
 		}
 		.homeContainer
 		{
@@ -518,8 +612,6 @@ export default {
 		{
 			left: 31%;
 		    top: 49%;
-		    width: 270px;
-		    height: 270px;
 		}
 
 		.homeContainer
@@ -561,8 +653,6 @@ export default {
 		{
 			top: 51%;
 		    left: 29%;
-		    width: 230px;
-		    height: 230px;
 		}
 		.homeContainer
 		{
@@ -623,8 +713,7 @@ export default {
 
 	/* Portrait and Landscape */
 	@media screen 
-	  and (device-width: 320px) 
-	  and (device-height: 640px) 
+	  and (max-device-height: 640px) 
 	  and (-webkit-device-pixel-ratio: 3) {
 	  	#bg
 		{
@@ -635,8 +724,6 @@ export default {
 		{
 			top: 51%;
 		    left: 29%;
-		    width: 230px;
-		    height: 230px;
 		}
 		.homeContainer
 		{
@@ -661,23 +748,7 @@ export default {
 		}
 	}
 
-	/* Portrait */
-	@media screen 
-	  and (device-width: 320px) 
-	  and (device-height: 640px) 
-	  and (-webkit-device-pixel-ratio: 3) 
-	  and (orientation: portrait) {
 
-	}
-
-	/* Landscape */
-	@media screen 
-	  and (device-width: 320px) 
-	  and (device-height: 640px) 
-	  and (-webkit-device-pixel-ratio: 3) 
-	  and (orientation: landscape) {
-
-	}
 
 	/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
@@ -722,8 +793,6 @@ export default {
 		{
 			top: 45%;
 		    left: 23%;
-		    width: 270px;
-		    height: 270px;
 		}
 	}
 
@@ -748,8 +817,6 @@ export default {
 		#whitePolygon {
 		    top: 24%;
 		    left: 51%;
-		    width: 240px;
-		    height: 240px;
 		}
 	}
 
@@ -787,8 +854,6 @@ export default {
 		{
 			top: 45%;
 		    left: 23%;
-		    width: 270px;
-		    height: 270px;
 		}
 		.homeContainer
 		{
@@ -817,8 +882,6 @@ export default {
 		#whitePolygon {
 		    top: 24%;
 		    left: 51%;
-		    width: 240px;
-		    height: 240px;
 		}
 	}
 
@@ -832,14 +895,12 @@ export default {
 	  	#bg
 		{
 			top: 65px;
-			bottom: 110px;
+			bottom: 109px;
 		}
 		#whitePolygon
 		{
 			left: 49%;
     		top: 30%;
-		    width: 350px;
-	    	height: 350px;
 		}
 
 		.headline
@@ -896,8 +957,6 @@ export default {
 		{
 			left: 46%;
 		    top: 20%;
-		    width: 350px;
-	    	height: 350px;
 		}
 
 		.headline
@@ -944,7 +1003,6 @@ export default {
 
 	/* Portrait and Landscape */
 	@media only screen 
-	  and (min-device-width: 320px) 
 	  and (max-device-width: 568px)
 	  and (-webkit-min-device-pixel-ratio: 2) {
 		.headline
@@ -965,21 +1023,18 @@ export default {
 
 	/* Portrait */
 	@media only screen 
-	  and (min-device-width: 320px) 
 	  and (max-device-width: 568px)
 	  and (-webkit-min-device-pixel-ratio: 2)
 	  and (orientation: portrait) {
 	  	#bg
 		{
 			top: 65px;
-			bottom: 70px;
+			bottom: 100px;
 		}
 	  	#whitePolygon
 		{
 			top: 44%;
 		    left: 27%;
-		    width: 180px;
-		    height: 180px;
 		}
 		.homeContainer
 		{
@@ -993,7 +1048,6 @@ export default {
 
 	/* Landscape */
 	@media only screen 
-	  and (min-device-width: 320px) 
 	  and (max-device-width: 568px)
 	  and (-webkit-min-device-pixel-ratio: 2)
 	  and (orientation: landscape) {
@@ -1005,8 +1059,6 @@ export default {
 	  	{
 	  		top: 23%;
 		    left: 54%;
-		    width: 170px;
-		    height: 170px;
 	  	}
 	  	.homeContainer
 		{
@@ -1052,10 +1104,8 @@ export default {
 		}
 	  	#whitePolygon
 	  	{
-	  		top: 46%;
-		    left: 22%;
-		    width: 275px;
-		    height: 275px;
+	  		top: 40%;
+		    left: 40%;
 	  	}
 	}
 
@@ -1089,8 +1139,6 @@ export default {
 		{
 			left: 52%;
 		    top: 19%;
-		    width: 250px;
-		    height: 250px;
 		}
 	}
 
@@ -1105,4 +1153,14 @@ export default {
             display: none;
         }
     }
+
+	.snowboardingYeti {
+		margin: 0 auto;
+  		width: 50%;
+
+		img {
+			width: 100%;
+			border-radius: 20px;
+		}
+	}
 </style>

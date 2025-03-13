@@ -175,7 +175,7 @@
 				{
 					size: '40px',
 					top: '200px',
-					left: '50%'
+					left: '65%'
 				},
 				{
 					size: '100px',
@@ -203,7 +203,7 @@
 				{
 					size: '50px',
 					top: '50px',
-					left: '50%'
+					left: '65%'
 				},
 				{
 					size: '40px',
