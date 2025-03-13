@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="align-content: center;">
+                <div class="meContainer">
                     <div id="whitePolygonMe"></div>
                     <div id="nameContainer">
                         <div id="name">Sam Beckett</div>
@@ -84,12 +84,23 @@
         }
     }
 
+    .meContainer {
+        align-content: center;
+        margin: 0 auto;
+    }
+
     @media only screen and (max-width: 1135px) {
         #offeringsGrid {
             grid-template-columns: 1fr;
         }
+
     }
 
+    @media only screen and (max-width: 865px) {
+        #offeringsInnerGrid {
+            grid-template-columns: 1fr !important;
+        }
+    }
     
 </style>
 

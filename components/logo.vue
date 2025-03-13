@@ -75,4 +75,28 @@
     width: 200px;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 1060px) {
+    .logo {
+        width: 80px;
+    }
+    .letters {
+        width: 220px;
+    }
+    .letters div {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 50px;
+    }
+    .letters {
+        width: 180px;
+    }
+    .letters div {
+        width: 120px;
+    }
+}
 </style>

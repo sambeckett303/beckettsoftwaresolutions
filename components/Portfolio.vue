@@ -16,7 +16,6 @@
                         <a :href="item.link" class="visitSite">Visit Site</a>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -25,6 +24,8 @@
 <style>
 #portfolio {
     margin-top: 75px;
+    height: fit-content;
+    margin-bottom: 75px;
 
     #portfolioGrid {
         margin-top: 50px;
@@ -88,6 +89,12 @@
                 padding: 20px;
                 margin-top: 10px;
             }
+        }
+    }
+    @media only screen and (max-width: 865px) {
+        #portfolioGrid {
+            grid-template-columns: 1fr !important;
+            gap: 50px;
         }
     }
 }

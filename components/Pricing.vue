@@ -165,6 +165,11 @@ h1 {
             margin-left: 7px;
         }
     }
-    
+}
+@media only screen and (max-width: 865px) {
+    #pricingGrid {
+        grid-template-columns: 1fr !important;
+        gap: 50px;
+    }
 }
 </style>

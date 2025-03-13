@@ -1163,4 +1163,11 @@ export default {
 			border-radius: 20px;
 		}
 	}
+
+	@media only screen and (max-width: 800px) {
+		.snowboardingYeti {
+			margin: 0 auto;
+			width: 80%;
+		}
+	}
 </style>
