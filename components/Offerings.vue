@@ -43,10 +43,14 @@
 
     #whitePolygonMe {
 	    background: url(/img/owner.JPG) no-repeat;
-	    background-size: contain;
-	    width: 302px;
-        height: 301px;
-        border-radius: 10px 10px 0px 0px;
+	    border-radius: 10px 10px 0px 0px;
+        height: 0;
+        padding: 0;
+        padding-bottom: 0px;
+        padding-bottom: 75%;
+        background-position: center center;
+        background-size: 100%;
+        background-repeat: no-repeat;
 	}
     #offeringsGrid {
         display: grid;
@@ -87,11 +91,21 @@
     .meContainer {
         align-content: center;
         margin: 0 auto;
+        width: 100%;
     }
 
     @media only screen and (max-width: 1135px) {
+        #offeringsBg {
+            margin: 20px 10px;
+            width: 95%;
+            box-sizing: border-box;
+        }
         #offeringsGrid {
             grid-template-columns: 1fr;
+        }
+        #nameContainer {
+            width: 100%;
+            box-sizing: border-box;
         }
 
     }

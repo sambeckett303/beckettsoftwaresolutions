@@ -45,7 +45,7 @@
 				</div>
 				
 				<div class="credit">
-					<span class="copyright">&copy; Copyright 2025 Eagle Valley Web Works</span>
+					<span class="copyright">&copy; Copyright 2025 Vail Valley Web Works</span>
 				</div>
 			</div>
 		</footer>
@@ -142,31 +142,12 @@
 		top: 40px;
     	width: 340px;
 	}
-	#logo
-	{
-		width: 110px;
-		height: 122px;
-		background: url(/img/BeckettSoftwareSolutionsLogo.png) no-repeat;
-		background-size: contain;
-		display: inline-block;
-	}
 	#header {
 		height: 130px;
 		display: flex;
 		justify-content: space-between;
 		align-content: center;
 		flex-wrap: wrap;
-	}
-	#letters
-	{
-		width: 200px;
-	    height: 120px;
-	    background: url(/img/BeckettSoftwareSolutionsText.png) no-repeat;
-	    background-size: contain;
-	    display: inline-block;
-	    top: 18px;
-	    position: relative;
-	    left: 20px;
 	}
 	#menuButtonContainer
 	{
@@ -485,8 +466,7 @@
 		}
 	}
 	#footerContainer {
-		border-top: 4px solid #675AFF;
-		margin-top: 25px;
+		margin-top: 75px;
 	}
 	.footerLogo {
 		width: 400px;

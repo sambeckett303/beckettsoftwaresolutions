@@ -128,8 +128,13 @@ h1 {
 .priceButton {
     width: 200px;
     margin: 0 auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-top: 50px;
     margin-bottom: 75px;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 10px 5px 5px gray;
 }
 
 .normal {

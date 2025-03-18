@@ -10,8 +10,10 @@ const props = defineProps({ buttonText: String });
 
 <style>
     .buttonContainer {
-        margin: 20px;
         margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     .buttonText {
@@ -21,5 +23,8 @@ const props = defineProps({ buttonText: String });
         text-decoration: none;
         padding: 20px;
         margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
     }
 </style>
