@@ -469,7 +469,6 @@
 		margin-top: 75px;
 	}
 	.footerLogo {
-		width: 400px;
 		margin: 0 auto;
 		margin-top: 30px;
 	}
