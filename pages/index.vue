@@ -472,9 +472,8 @@ export default {
 
 		.pageTitle
 		{
-			top: 70px;
 			padding: 8px 15px;
-			font-size: 21px;
+    		font-size: 37px;
 		}
 
 		#whitePolygon

@@ -2,7 +2,7 @@ const sgMail = require('@sendgrid/mail');
 
 exports.handler = async (event) => {
     // Set your SendGrid API key
-    console.log('Inside handler function!');
+    // console.log('Inside handler function!');
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     // Parse the form data
@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     // Create the email content
     const msg = {
         to: 'sambeckett303@gmail.com', // Replace with your email
-        from: 'donotreply@beckettsoftwaresolutions.com', // Replace with your "verified" sender
+        from: 'quotes@vailvalleywebworks.com', // Replace with your "verified" sender
         subject: 'New Contact Form Submission',
         text: `Name: ${formData.name}\nEmail: ${formData.email}\nDescription: ${formData.description}`,
     };

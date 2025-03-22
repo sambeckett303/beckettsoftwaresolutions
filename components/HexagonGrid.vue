@@ -334,7 +334,7 @@
 					case 'work':
 						this.hexagons = this.mobileWorkHexagons;
 						break;
-					case 'reviews':
+					case 'contact':
 						this.hexagons = this.mobileReviewHexagons;
 						break;
 					case 'blog':

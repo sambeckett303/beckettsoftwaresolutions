@@ -38,19 +38,6 @@
 				</div>
 			</div>
 		</transition>
-		<div class="downArrowArea">
-			<div class="selectableCircle" @click="$router.push('/about')">
-				<div class="downArrowText">ABOUT</div>
-				<div class="downArrow"></div>
-			</div>
-		</div>
-		<div class="upArrowArea">
-			<div class="selectableCircle" @click="$router.push('/services')">
-				<div class="upArrowText">SERVICES</div>
-				<div class="upArrow"></div>
-			</div>
-		</div>
-		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 </template>
 
@@ -86,7 +73,7 @@ export default
                 logoClass: 'thrushWork'
             },
             {
-                title: 'Koza Customs',
+                title: 'B-Rad Customs',
                 top: '50%',
                 left: 'calc(50% - 189px)',
                 hovering: false,

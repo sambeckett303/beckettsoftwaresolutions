@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="priceButton">
-            <my-button buttonText="Get Started"></my-button>
+            <my-button @click="$router.push('/quote')" buttonText="Get Started"></my-button>
         </div>
     </div>
 </template>

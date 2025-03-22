@@ -36,19 +36,6 @@
 				<div class="text">BACK</div>
 			</div>
 		</transition>
-		<div class="downArrowArea">
-			<div class="selectableCircle" @click="$router.push('/work')">
-				<div class="downArrowText">WORK</div>
-				<div class="downArrow"></div>
-			</div>
-		</div>
-		<div class="upArrowArea">
-			<div class="selectableCircle" @click="$router.push('/')">
-				<div class="upArrowText">HOME</div>
-				<div class="upArrow"></div>
-			</div>
-		</div>
-		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 </template>
 

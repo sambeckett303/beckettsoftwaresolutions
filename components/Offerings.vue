@@ -58,7 +58,6 @@
         grid-gap: 20px;
         
         #nameContainer {
-            width: 271px;
             padding: 15px;
             background: white;
             border-radius: 0px 0px 10px 10px;
@@ -92,6 +91,7 @@
         align-content: center;
         margin: 0 auto;
         width: 100%;
+        max-width: 400px;
     }
 
     @media only screen and (max-width: 1135px) {

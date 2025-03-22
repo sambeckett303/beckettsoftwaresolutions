@@ -2,17 +2,16 @@
 	<transition name="fadeDown">
 	<div div class="pageContainer">
 		<div id="bg">
-			<h1 id="aboutTitle">About Me</h1>
+			<h1 id="aboutTitle">About Vail Valley Web Works</h1>
 			<div id="aboutWhitePolygon"></div>
 			<p id="aboutMeText">
-				I grew up in a beautiful mountain town called Conifer, Colorado before going to college at
-				University of Colorado at Boulder, graduating with a degree in Computer Science Engineering.
+				Vail Valley Web Works is owned and operated by Sam Beckett, a Computer Science Engineering graduate from the
+				University of Colorado at Boulder. 
 				<br><br>
-				During this time, through course projects and internships, I developed an interest in web
-				development, and web projects have been the majority of my software focus.
+				With a strong interest in and foundation in web projects, the web development process has become a core focus.
 				<br><br>
-				When I'm not coding up websites, you can find me enjoying the outdoors on my mountain bike
-				or snowboard depending on the season.
+				While design might not be my primary area of day to day expertise, through years of experience in the industry,
+				we work with some of the best designers and have an eye for what makes a good design work. 
 			</p>
 		</div>
 		<client-only>
@@ -22,19 +21,6 @@
 				</svg>
 			</div>
 		</client-only>
-		<div class="downArrowArea">
-			<div class="selectableCircle" @click="$router.push('/blog')">
-				<div class="downArrowText">BLOG</div>
-				<div class="downArrow"></div>
-			</div>
-		</div>
-		<div class="upArrowArea">
-			<div class="selectableCircle" @click="$router.push('/work')">
-				<div class="upArrowText">WORK</div>
-				<div class="upArrow"></div>
-			</div>
-		</div>
-		<div @click="$router.push('/quote')" class="letsWorkTogether"><div class="logo"></div></div>
 	</div>
 	</transition>
 </template>

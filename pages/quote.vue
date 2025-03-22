@@ -1,7 +1,7 @@
 <template>
 	<transition name="bounce">
 	<div>
-		<div class="pageTitle" style="width: 80%;left: 0;right: 0;margin: auto;">Let's Build!</div>
+		<div class="pageTitle" style="position: initial; width: 80%;margin: auto;margin-top: 75px;">Let's Build!</div>
 		<form @submit.prevent="submitQuoteRequest" name="contact">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
@@ -124,10 +124,8 @@
 	}
 
 	.quoteContainer {
-		position: relative;
-    	top: 252px;
     	width: 80%;
-		margin: auto;
+		margin: 75px auto;
     	color: #6f6868;
 
     	p {

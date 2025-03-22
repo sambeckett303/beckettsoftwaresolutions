@@ -86,8 +86,8 @@
 					hovering: false
 				},
 				{
-					label: "REVIEWS",
-					page: "/reviews",
+					label: "CONTACT",
+					page: "/quote",
 					left: 'calc(50% - 1px)',
 					top: 'calc(50% + 44px)',
 					hovering: false
