@@ -115,6 +115,13 @@
             grid-template-columns: 1fr !important;
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        .offeringsContainer {
+            width: 100% !important;
+            margin-bottom: 20px !important;
+        }
+    }
     
 </style>
 

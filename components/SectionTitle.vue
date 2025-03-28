@@ -20,4 +20,9 @@ const props = defineProps({ title: String });
     margin: 0 auto;
     border-radius: 15px;
 }
+@media only screen and (max-width: 1135px) {
+    .sectionTitle {
+        width: 75%;
+    }
+}
 </style>
