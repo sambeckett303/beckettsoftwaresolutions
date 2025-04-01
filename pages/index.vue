@@ -52,7 +52,7 @@
 			<h1>WHAT WE DO</h1>
 		</div>
 		<p style="margin-top: 55px">
-			At Eagle Valley Web Design, we design and develop high-quality websites for new and growing businesses. Our custom-built sites are optimized for performance,
+			At Vail Valley Web Works, we design and develop high-quality websites for new and growing businesses. Our custom-built sites are optimized for performance,
 			security, and search engines—helping you attract more customers and increase revenue. We also handle ongoing updates and maintenance, so you can focus on
 			building your business while we keep your website running smoothly.
 		</p>
