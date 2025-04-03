@@ -145,7 +145,6 @@ export default
             this.dist = 0;
             this.startX = touchobj.pageX;
             this.startY = touchobj.pageY;
-            console.log("touch start bruh");
         },
         handleTouchMove: function(event)
         {
@@ -153,8 +152,6 @@ export default
             var distX = touchobj.pageX - this.startX // get horizontal dist traveled by finger while in contact with surface
             var distY = touchobj.pageY - this.startY // get vertical dist traveled by finger while in contact with surface
             var currentLeftPosition = parseInt(this.leftToHold.slice(0, -1));
-            console.log("current leftToHold: "+this.leftToHold);
-            console.log("current left: " + currentLeftPosition);
             if (distX < 0)
             {
                 // left swipe, move panel to right
@@ -165,10 +162,8 @@ export default
             else if (distX > 0)
             {
                 // right swipe, move panel to left
-                console.log("right swipe");
                 var leftAmt = Math.round(Math.abs(distX)/2);
                 var newLeft = currentLeftPosition + leftAmt;
-                console.log("new left: " + newLeft);
             }
             else
             {
@@ -193,7 +188,6 @@ export default
             var distY = touchobj.pageY - this.startY // get vertical dist traveled by finger while in contact with surface
             this.startX = null;
             this.startY = null;
-            console.log("touch end bruh");
         },
         workClicked: function(workSection)
         {
@@ -451,7 +445,7 @@ export default
 
 	.leftRightSwipe
 	{
-		position: fixed;
+		position: absolute;
     	bottom: 100px;
 	    left: 50%;
 	    width: 40px;

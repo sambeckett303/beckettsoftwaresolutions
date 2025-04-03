@@ -5,6 +5,12 @@
 			<h1 id="aboutTitle">About Vail Valley Web Works</h1>
 			<div id="aboutWhitePolygon"></div>
 			<p id="aboutMeText">
+				Vail Valley Web Works, founded by Sam Beckett, a Computer Science Engineering graduate from the University of Colorado at Boulder, is dedicated to building high-quality, results-driven websites.
+				<br><br>
+				With a deep technical foundation and a passion for web development, we specialize in creating seamless, high-performing websites that help businesses thrive online.
+				<br><br>
+				Years of industry experience have sharpened our ability to collaborate with top-tier designers and recognize what makes a design truly effective. The result? Websites that not only look great but also function flawlessly and drive real results for your business.
+				<!--
 				Vail Valley Web Works is owned and operated by Sam Beckett, a Computer Science Engineering graduate from the
 				University of Colorado at Boulder. 
 				<br><br>
@@ -12,6 +18,7 @@
 				<br><br>
 				While design might not be my primary area of day to day expertise, through years of experience in the industry,
 				we work with some of the best designers and have an eye for what makes a good design work. 
+				-->
 			</p>
 		</div>
 		<client-only>
@@ -61,7 +68,7 @@
 					}
 					else
 					{
-						return window.innerHeight - 250 + 'px';
+						return window.innerHeight - 251 + 'px';
 					}
 				}
 			},
@@ -103,9 +110,7 @@
 		      	window.addEventListener('resize', () => {
 		        	this.windowWidth = window.innerWidth;
 		      	});
-		    })
-		    var pageElement = document.getElementsByClassName('pageContainer')[0];
-		    pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
+		    });
 		}
 	}
 </script>
@@ -134,7 +139,6 @@
 		left: 7%;
 		top: 5%;
 		color: #FFFFFF;
-		font-family: 'Russo One';
 	}
 	#aboutWhitePolygon
 	{
@@ -382,24 +386,26 @@
 	{
 		#aboutTitle
 		{
-			left: 30px;
-		    top: 40px;
-		    font-size: 22px;
-		    margin: 0;
+			font-size: 22px;
+			position: initial;
+			margin: 0 auto;
+			margin-top: 0px;
+			width: fit-content;
+			margin-top: 18px;
 		}
 		#aboutWhitePolygon
 		{
-			top: 5px;
-		    left: 72%;
-		    transform: translateX(-50%);
+			position: initial;
+			margin: 0 auto;
 		    width: 98px;
 		    height: 109px;
 		}
 		#aboutMeText
 		{
-			top: 103px;
-    		width: 87%;
-    		font-size: 16px;
+			position: initial;
+			margin: 10px auto;
+			font-size: 16px;
+			width: 80%;
 		}
 	}
 </style>

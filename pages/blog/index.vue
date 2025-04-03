@@ -39,12 +39,6 @@
 			</div>
 		</transition>
 		<div v-if="isMobile" class="leftRightSwipe"></div>
-		<div class="upArrowArea">
-			<div class="selectableCircle" @click="$router.push('/about')">
-				<div class="upArrowText">ABOUT</div>
-				<div class="upArrow"></div>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -64,7 +58,7 @@
 			[
 				{
 					title: "7 Reasons Why You Should Hire Professional Developers For Your Website",
-					date: "Oct 27, 2019",
+					date: "April 2, 2025",
 					url: "7_Reasons_Why_You_Should_Hire_Professional_Developers_For_Your_Website",
 					hovering: false,
 					top: "10px",
@@ -142,7 +136,6 @@
 		        this.dist = 0;
 		        this.startX = touchobj.pageX;
 		        this.startY = touchobj.pageY;
-		        console.log("touch start bruh");
 			},
 			handleTouchMove: function(event)
 			{
@@ -150,23 +143,17 @@
 				var distX = touchobj.pageX - this.startX // get horizontal dist traveled by finger while in contact with surface
 		        var distY = touchobj.pageY - this.startY // get vertical dist traveled by finger while in contact with surface
 		    	var currentLeftPosition = parseInt(this.activeFeatureLeft.slice(0, -1));
-		        console.log("current activeFeatureLeft: "+this.activeFeatureLeft);
-		        console.log("current left: " + currentLeftPosition);
 		        if (distX < 0)
 		        {
 		        	// left swipe, move panel to right
-		        	console.log("left swipe")
 		        	var leftAmt = Math.round(Math.abs(distX));
 		        	var newLeft = currentLeftPosition - leftAmt;
-		        	console.log("new left: "+ newLeft);
 		        }
 		        else if (distX > 0)
 		        {
 		        	// right swipe, move panel to left
-		        	console.log("right swipe");
 		        	var leftAmt = Math.round(Math.abs(distX));
 		        	var newLeft = currentLeftPosition + leftAmt;
-		        	console.log("new left: " + newLeft);
 		        }
 		        else
 		        {

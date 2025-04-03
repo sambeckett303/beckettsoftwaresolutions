@@ -93,23 +93,23 @@
 			[
 				{
 					size: '30px',
-					top: '65px',
+					top: '45%',
 					left: '55%'
 				},
 				{
 					size: '60px',
-					top: '130px',
+					top: '25%',
 					right: '10px'
 				},
 				{
 					size: '15px',
-					top: '130px',
+					top: '0px',
 					left: '5px'
 				},
 				{
 					size: '100px',
 					left: '-25px',
-					bottom: '130px'
+					top: '75%'
 				},
 				{
 					size: '60px',
@@ -119,7 +119,7 @@
 				{
 					size: '30px',
 					left: '30%',
-					bottom: '15px'
+					bottom: '40%'
 				}
 			],
 			mobileBlogHexagons:
@@ -159,22 +159,22 @@
 			[
 				{
 					size: '350px',
-					bottom: '0px',
+					top: '75%',
 					left: '-10px'
 				},
 				{
 					size: '200px',
-					top: '30px',
+					top: '25%',
 					right: '185px'
 				},
 				{
 					size: '50px',
-					top: '250px',
+					top: '50%',
 					left: '50px'
 				},
 				{
 					size: '40px',
-					top: '200px',
+					top: '-150px',
 					left: '65%'
 				},
 				{

@@ -110,6 +110,7 @@
 	    font-size: 15px;
 	    padding: 10px;
 	    max-width: 100%;
+		box-sizing: border-box;
 	}
 
 	.button {

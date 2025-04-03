@@ -238,6 +238,7 @@
 		position: relative;
 		height: 100vh;
 		width: 100%;
+		overflow: hidden;
 	}
 
 	.anchorOutOfSight
@@ -449,6 +450,41 @@
 				-o-transform: scale(0.7);
 				-ms-transform: scale(0.7);
 			}
+		}
+	}
+
+	@media only screen and (min-width: 770px) and (max-width: 1060px) {
+		#bg 
+		{
+			top: 80px;
+			bottom: 110px;
+		}
+
+		.pageTitle
+		{
+			padding: 8px 15px;
+    		font-size: 37px;
+		}
+	}
+	@media only screen and (min-width: 135px) and (max-width: 570px) {
+		.pageTitle
+		{
+			top: 70px;
+			padding: 8px 15px;
+			font-size: 21px;
+		}
+	}
+	@media only screen and (min-width: 575px) and (max-width: 770px) {
+		#bg 
+		{
+			top: 35px;
+			bottom: 110px;
+		}
+		.pageTitle
+		{
+			top: 70px;
+			padding: 8px 15px;
+			font-size: 21px;
 		}
 	}
 	.letsWorkTogether {

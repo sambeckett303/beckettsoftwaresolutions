@@ -6,7 +6,7 @@
 				<div class="mainBlogImageCover"></div>
 				<div class="blogTitle">
 					<h1>7 Reasons Why You Should Hire Professional Developers For Your Website</h1>
-					<div>April 5th, 2019</div>
+					<div>April 2nd, 2025</div>
 				</div>
 			</div>
 			<div class="blogContentContainer">

@@ -249,7 +249,6 @@ export default {
 				polygons.forEach((pg) => {
 					pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
 				});
-				console.log(polygons);
                 return polygons;
             }
         }
@@ -505,14 +504,6 @@ export default {
 		}
 	}
 
-	@media only screen and (min-width: 135px) and (max-width: 570px) {
-		.pageTitle
-		{
-			top: 70px;
-			padding: 8px 15px;
-			font-size: 21px;
-		}
-	}
 
 	@media only screen and (min-width: 575px) and (max-width: 770px) {
 		#bg 
@@ -1156,6 +1147,7 @@ export default {
 	.snowboardingYeti {
 		margin: 0 auto;
   		width: 50%;
+		max-width: 810px;
 
 		img {
 			width: 100%;
