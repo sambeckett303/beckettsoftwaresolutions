@@ -4,7 +4,7 @@
        <div id="offeringsBg">
             <div id="offeringsGrid">
                 <div class="whiteText">
-                    <h2 style="font-size: 26px;">Websites for $0 down and $100 per month</h2>
+                    <h2 style="font-size: 26px;" class="whiteText">Websites for $0 down and $100 per month</h2>
                     <div style="font-size: 18px;">
                         We offer a professional 5-page small business website with $0 upfront cost starting at $100 a month. Need more pages? We will do custom pricing based on the project. Our plans come with a 12-month minimum contract and include design, development, hosting, unlimited edits, support, and updates.
                     </div>

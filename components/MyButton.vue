@@ -14,6 +14,7 @@ const props = defineProps({ buttonText: String });
         width: 100%;
         text-align: center;
         box-sizing: border-box;
+        cursor: pointer;
     }
 
     .buttonText {

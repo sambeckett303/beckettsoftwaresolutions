@@ -19,6 +19,10 @@ const props = defineProps({ title: String });
     width: 50%;
     margin: 0 auto;
     border-radius: 15px;
+
+    h2 {
+        color: #FFFFFF
+    }
 }
 @media only screen and (max-width: 1135px) {
     .sectionTitle {

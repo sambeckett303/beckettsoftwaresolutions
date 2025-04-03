@@ -54,51 +54,51 @@ export default
         startY: null,
         workTiles:
         [
-            {
-                title: 'Seagate Technologies',
-                top: 'calc(50% - 150px)',
-                left: 'calc(50% - 275px)',
-                hovering: false,
-                description: 'I worked full time at Seagate for 7 years. I worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface used for monitoring and configuring data storage systems.<br><br>I am now working on a new project, helping build out a Node.js microservices backend for a unified data experience.',
-                descriptionTop: '205px',
-                logoClass: 'seagateWork'
-            },
+            // {
+            //     title: 'Seagate Technologies',
+			// 	   top: 'calc(50% - 150px)',
+			// 	   left: 'calc(50% - 275px)',
+            //     hovering: false,
+            //     description: 'I worked full time at Seagate for 7 years. I worked on various web based projects during my time here.<br><br>Was the lead architect and technical developer of building a completely re-designed and modernized version of a large single page application interface used for monitoring and configuring data storage systems.<br><br>I am now working on a new project, helping build out a Node.js microservices backend for a unified data experience.',
+            //     descriptionTop: '205px',
+            //     logoClass: 'seagateWork'
+            // },
             {
                 title: 'Thrush Designs',
-                top: 'calc(50% - 150px)',
-                left: 'calc(50% - 100px)',
+				top: 'calc(50% - 150px)',
+                left: 'calc(50% - 275px)',
                 hovering: false,
-                description: 'A Seattle based artist with amazing and creative art products, often plant-based artwork. The site is a portfolio that showcases her various categories of artwork, along with an online store where she can sell her current projects. Includes an administration page where all the site content and orders can be managed.<br><br>This project has not quite been launched "live" yet, as we are still in the process of defining her products and updating her pictures before we link the site to her domain.',
+                description: 'A Seattle based artist with amazing and creative art products, often plant-based artwork. The site is a portfolio that showcases her various categories of artwork, along with an online store where she can sell her current projects. Includes an administration page where all the site content and orders can be managed.<br><br>Check out this project live at <a href="https://www.thrushdesigns.art">ThrushDesigns.art</a>.',
                 descriptionTop: '260px',
                 logoClass: 'thrushWork'
             },
             {
                 title: 'B-Rad Customs',
-                top: '50%',
-                left: 'calc(50% - 189px)',
+				top: 'calc(50% - 150px)',
+                left: 'calc(50% - 100px)',
                 hovering: false,
-                description: 'A custom metal fabrication shop located out of Cedaredge, Colorado. The site features a photo gallery of all his previous work, categorized by their two channels of work: Vehicles and Art. The site also has an online store, where users can buy his various vehicle and/or artwork products. This particular site uses PayPal for the checkout process. The site includes a custom administration page I have built where all the site content, including the slideshow images, reviews, gallery projects, store products, and orders can be managed.<br><br>You can check out this project live over at <a href="https://www.kozacustoms.com">KozaCustoms.com</a>',
+                description: 'A custom metal fabrication shop located out of Cedaredge, Colorado. The site features a photo gallery of all his previous work, categorized by their two channels of work: Vehicles and Art. The site also has an online store, where users can buy his various vehicle and/or artwork products. This particular site uses PayPal for the checkout process. The site includes a custom administration page I have built where all the site content, including the slideshow images, reviews, gallery projects, store products, and orders can be managed.<br><br>You can check out this project live over at <a href="https://b-rad-customs.netlify.app/">b-rad-customs.netlify.app.com</a>',
                 descriptionTop: '235px',
-                logoClass: 'kozaWork'
+                // logoClass: 'kozaWork'
             },
             {
                 title: 'North Pole Lighting',
-                top: 'calc(50% - 150px)',
-                left: 'calc(50% + 75px)',
+				top: '50%',
+                left: 'calc(50% - 189px)',
                 hovering: false,
                 descriptionTop: '260px',
                 description: 'A simple but effective one-page website for a holiday season lighting company that features some fun graphics and showcases some of their work. Includes the ability for potential customers to easily email the business owner with a quote request.<br><br>You can check out this project live over at <a href="https://www.northpolelightingcompany.com">NorthPoleLightingCompany.com</a>',
                 logoClass: 'nplcWork'
             },
-            {
-                title: 'Universal Studios',
-                top: '50%',
-                left: 'calc(50% - 12px)',
-                hovering: false,
-                descriptionTop: '260px',
-                description: 'Worked together with Universal Studios where I was writing backend Node.js code that supported the theme parks and resorts in Orlando, Hollywood, and Japan.<br><br>This was an excellent experience and got exposed to several new technologies and processes. I worked on several projects including Third Tier Express, Mobile Food and Drink Orders, and repo containerization migration.',
-                logoClass: 'universalWork'
-            }
+            // {
+            //     title: 'Universal Studios',
+            //     top: '50%',
+            //     left: 'calc(50% - 12px)',
+            //     hovering: false,
+            //     descriptionTop: '260px',
+            //     description: 'Worked together with Universal Studios where I was writing backend Node.js code that supported the theme parks and resorts in Orlando, Hollywood, and Japan.<br><br>This was an excellent experience and got exposed to several new technologies and processes. I worked on several projects including Third Tier Express, Mobile Food and Drink Orders, and repo containerization migration.',
+            //     logoClass: 'universalWork'
+            // }
         ],
         isMobile: false,
         zoomAnimation: '',
@@ -566,6 +566,9 @@ export default
 	@media only screen and (min-width: 300px) and (max-width: 600px) and (orientation: portrait),
 		   only screen and (min-height: 300px) and (max-height: 600px) and (orientation: landscape)
 	{
+		#pageContainer {
+			overflow: hidden;
+		}
 		#workContainer
 		{
 			transform: scale(.7);

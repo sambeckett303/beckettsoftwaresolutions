@@ -156,7 +156,7 @@
 		position: absolute;
 		left: 7%;
 	    top: 100px;
-	    width: 47%;
+	    max-width: 44%;
 	}
 	.downArrowArea
 	{

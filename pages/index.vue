@@ -7,7 +7,7 @@
 						<span v-for="(item, index) in 'Hello&nbsp;there!'" class="char" :style="`--char-index: ${index};`">{{ item }}</span>
 					</h1>
 					<div class="headline2">
-						We build innovative web solutions tailored to your unique needs -- Handcrafted websites, superior results, starting at just $100 per month
+						We build innovative web solutions tailored to your unique needs -- Handcrafted websites with superior results
 					</div>
 				</div>
 			</div>
@@ -281,7 +281,7 @@ export default {
 		margin-top: 1.875rem;
 		color: #656565;
 		display: block;
-		font-size: 1.3rem;
+		font-size: 1.1rem;
 	}
 	.char {
 		display: inline-block;
@@ -347,6 +347,7 @@ export default {
 	.headline
 	{
 		font-size: 36px;
+		color: #FFFFFF
 	}
 	.headline2
 	{
