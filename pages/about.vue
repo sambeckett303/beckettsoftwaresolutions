@@ -405,7 +405,7 @@
 			position: initial;
 			margin: 10px auto;
 			font-size: 16px;
-			width: 80%;
+			max-width: 80%;
 		}
 	}
 </style>

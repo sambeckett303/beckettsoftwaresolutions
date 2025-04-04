@@ -445,7 +445,7 @@ export default
 	.leftRightSwipe
 	{
 		position: absolute;
-    	bottom: 100px;
+    	bottom: 140px;
 	    left: 50%;
 	    width: 40px;
 	    height: 40px;

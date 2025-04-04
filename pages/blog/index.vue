@@ -87,7 +87,6 @@
 		      });
 		    });
 		    var pageElement = document.getElementsByClassName('pageContainer')[0];
-		    pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
 		},
 		beforeDestroy: function()
 		{
@@ -267,8 +266,8 @@
 
 	.leftRightSwipe
 	{
-		position: fixed;
-    	bottom: 120px;
+		position: absolute;
+    	bottom: 140px;
 	    left: 50%;
 	    width: 40px;
 	    height: 40px;
