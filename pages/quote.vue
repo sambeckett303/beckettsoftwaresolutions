@@ -196,7 +196,7 @@
 		width: calc(100vw - 60px);
 		max-width: 350px;
 		background: white;
-		position: absolute;
+		position: fixed;
 		z-index: 1000;
 		padding: 20px;
 		border-radius: 10px;
