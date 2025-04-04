@@ -129,7 +129,6 @@ export default
             });
         });
         var pageElement = document.getElementsByClassName('pageContainer')[0];
-        pageElement.addEventListener('touchmove', function(e) { e.preventDefault() }, {passive: false });
     },
     beforeDestroy: function()
     {
