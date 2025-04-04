@@ -27,7 +27,8 @@
 			<div class="button" @click="closeSuccess">BACK TO HOME</div>
 		</div>
 		<div class="dialogContainer" v-if="showErrorDialog">
-			<div class="text">Oops.. Sorry, there was an unexpected error. Please contact sambeckett303@gmail.com</div>
+			<div class="text">Oops.. Sorry, there was an unexpected error. Please contact sam@vailvalleywebworks.com</div>
+			<div class="button" @click="closeSuccess">BACK TO HOME</div>
 		</div>
 	</div>
 	</transition>
