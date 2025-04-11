@@ -160,8 +160,8 @@
 	}
 	#menuButtonContainer:hover
 	{
-		box-shadow: 1px 1px 1px 1px #7a5b9e;
-	    background-color: #b475ff;
+		box-shadow: 1px 1px 1px 1px var(--secondary-color);
+	    background-color: var(--third-color);
 	    color: #FFFFFF;
 	}
 	#menuText
@@ -258,8 +258,8 @@
 	}
 	#closeMenuContainer:hover
 	{
-		box-shadow: 1px 1px 1px 1px #7a5b9e;
-	    background-color: #b475ff;
+		box-shadow: 1px 1px 1px 1px var(--secondary-color);
+	    background-color: var(--third-color);
 	    color: #FFFFFF;
 	}
 	#closeMenu

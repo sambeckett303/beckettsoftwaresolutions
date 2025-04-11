@@ -6,5 +6,7 @@ export default defineNuxtConfig({
       name: 'bounce'
     }
   },
-  ssr: true
+  ssr: true,
+  modules: ["@nuxt/image"],
+  css: ['@/assets/css/variables.css'],
 })

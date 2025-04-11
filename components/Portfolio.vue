@@ -55,7 +55,7 @@
             border-radius: 20px;
         }
         .itemTitle {
-            background: #675AFF;
+            background: var(--primary-color);
             color: white;
             width: 80%;
             margin: 0 auto;
@@ -68,7 +68,7 @@
         }
         .itemDescription {
             background: white;
-            border: 4px solid #675AFF;
+            border: 4px solid var(--primary-color);
             padding: 20px;
             width: 80%;
             min-height: 50px;
@@ -82,8 +82,8 @@
             }
 
             .visitSite {
-                box-shadow: 1px 1px 1px 1px #7a5b9e;
-                background-color: #b475ff;
+                box-shadow: 1px 1px 1px 1px var(--secondary-color);
+                background-color: var(--third-color);
                 color: #FFFFFF;
                 text-decoration: none;
                 padding: 20px;

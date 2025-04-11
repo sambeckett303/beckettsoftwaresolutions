@@ -32,7 +32,7 @@
 
 <style scss="true" scoped>
     #offeringsBg {
-        background: #675AFF;
+        background: var(--primary-color);
         margin: 20px 60px;
         padding: 50px 30px 70px 30px;
         border-radius: 10px;

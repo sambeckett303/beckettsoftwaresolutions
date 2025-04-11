@@ -14,7 +14,7 @@
 			<client-only>
 				<div id="triangle">
 					<svg :width="getTriangleWidth" height="230">
-						<polygon :points="getTrianglePoints" style="fill:#675AFF;"></polygon>
+						<polygon :points="getTrianglePoints" style="fill: var(--primary-color);"></polygon>
 					</svg>
 				</div>
 			</client-only>
@@ -240,7 +240,7 @@ export default {
                 {
                     var polygons =
                     [
-                        { top: '156px', right: '167px', size: '175px' },
+                        { top: '25px', right: '25px', size: '175px' },
                         { top: '317px', right: '15px', size: '84px' },
                         { top: '400px', right: '235px', size: '125px' },
                         { top: '500px', right: '500px', size: '70px' }
@@ -268,6 +268,9 @@ export default {
 // * {
 //   outline: 1px solid red;
 // }
+	body {
+		background: #EEE;
+	}
 	.sectionTitleHeader {
 		text-align: center;
 		color: #565454;
@@ -279,7 +282,7 @@ export default {
 		margin: auto;
 		margin-bottom: 1.875rem;
 		margin-top: 1.875rem;
-		color: #656565;
+		color: #131111;
 		display: block;
 		font-size: 1.1rem;
 	}
@@ -321,7 +324,7 @@ export default {
 		height: calc(100% - 295px);
 		width: calc(100% - 30px);
 		left: 15px;
-		background: #675AFF;
+		background: var(--primary-color);
 	}
 	#bg
 	{

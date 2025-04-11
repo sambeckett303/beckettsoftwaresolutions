@@ -10,8 +10,8 @@ const props = defineProps({ title: String });
 
 <style>
 .sectionTitle {
-    background: #605eff;
-    background: linear-gradient(90deg, #605eff 0%, #b675ff 45%, #54e1f2 100%);
+    background: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), var(--third-color) 45%, var(--secondary-color) 100%);
     color: #FFFFFF;
     padding: 15px 30px;
     font-size: 25px;
