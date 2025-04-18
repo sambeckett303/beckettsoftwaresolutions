@@ -9,6 +9,7 @@
 				left: hexagon.left,
 				right: hexagon.right
 			}">
+			<gradient-hex :scale="hexagon.scale"></gradient-hex>
 		</div>
 	</div>
 </template>
@@ -323,6 +324,33 @@
 		}),
 		beforeMount: function()
 		{
+			this.blogPostHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.blogHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.reviewHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.servicesHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.workHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.mobileBlogHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.mobileReviewHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.mobileServiceHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
+			this.mobileWorkHexagons.forEach((pg) => {
+				pg.scale = (Number(pg.size.substring(0, pg.size.length - 2)) / 200).toString();
+			});
 			if ((window.innerHeight > window.innerWidth && window.innerWidth <= 600) ||
 				(window.innerWidth > window.innerHeight && window.innerHeight <= 600))
 			{
@@ -372,8 +400,8 @@
 	.hexagon
 	{
 		position: absolute;
-		background: url(/img/hexagon-01.png);
-		background-size: contain;
+		// background: url(/img/hexagon-01.png);
+		// background-size: contain;
 		z-index: -1;
 	}
 	.bounce-enter-active {

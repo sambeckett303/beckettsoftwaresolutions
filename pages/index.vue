@@ -269,7 +269,7 @@ export default {
 //   outline: 1px solid red;
 // }
 	body {
-		background: #EEE;
+		background: var(--bg-color);
 	}
 	.sectionTitleHeader {
 		text-align: center;

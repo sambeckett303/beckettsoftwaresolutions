@@ -19,6 +19,7 @@
 					bottom: serviceHexagon.bottom,
 					left: serviceHexagon.left
 				}">
+				<border-hex></border-hex>
 				<div class="serviceLabel">{{serviceHexagon.label}}</div>
 			</div>
 		</div>
@@ -26,6 +27,7 @@
 			<div id="activeService"
 				v-if="serviceActive"
 				:class="{ activeServiceAnchored: serviceAnchored }">
+				<border-hex></border-hex>
 				<div class="title">{{activeService.label}}</div>
 				<div class="serviceImage" :class="[activeService.imageClass]"></div>
 				<div class="text">{{activeService.text}}</div>
@@ -33,6 +35,7 @@
 		</transition>
 		<transition name="backTransition">
 			<div id="backContainer" :class="{backAnchored: backAnchored}" v-if="serviceActive" @click="backToServices">
+				<border-hex></border-hex>
 				<div class="text">BACK</div>
 			</div>
 		</transition>
@@ -180,8 +183,8 @@
 	#activeService
 	{
 		position: absolute;
-		background: url(/img/hexagon-04.png) no-repeat;
-		background-size: contain;
+		// background: url(/img/hexagon-04.png) no-repeat;
+		// background-size: contain;
 		width: 600px;
 	    height: 690px;
 	    transform: translate(-50%, -50%);
@@ -213,8 +216,8 @@
 	{
 		width: 200px;
 		height: 200px;
-		background: url(/img/hexagon-04.png) no-repeat;
-		background-size: contain;
+		// background: url(/img/hexagon-04.png) no-repeat;
+		// background-size: contain;
 		position: absolute;
 		bottom: 25px;
 		right: 25px;
@@ -223,8 +226,8 @@
 		.text
 		{
 			position: absolute;
-		    top: 80px;
-		    left: 55px;
+		    top: 92px;
+  			left: 67px;
 		    font-size: 25px;
 		}
 	}
@@ -240,12 +243,13 @@
 	.serviceHexagon
 	{
 		position: absolute;
-		background: url(/img/hexagon-04.png) no-repeat;
-		background-size: contain;
+		// background: url(/img/hexagon-04.png) no-repeat;
+		// background-size: contain;
 		width: 174px;
-		height: 198px;
+		height: 175px;
 		transition: all .3s ease;
 		cursor: pointer;
+		transform: scale(1.05);
 	}
 	.serviceLabel
 	{
@@ -255,7 +259,7 @@
 	    left: 0;
 	    right: 0;
 	    margin: 0 auto;
-	    width: 149px;
+	    width: 156px;
 	    margin-left: 9px;
 	    text-align: center;
 	}
