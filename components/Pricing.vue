@@ -60,7 +60,7 @@
                 }],
             }, {
                 title: 'Monthly',
-                price: '$125',
+                price: '$150',
                 subPriceText: 'Per Month',
                 components: [{
                     label: 'Design & Development',
