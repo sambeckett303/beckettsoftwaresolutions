@@ -696,8 +696,8 @@
 		}
 		#backContainer .text
 		{
-			top: 39px;
-			left: 24px;
+			top: 44px;
+    		left: 29px;
 			font-size: 15px;
 		}
 	}
