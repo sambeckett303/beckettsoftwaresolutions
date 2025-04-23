@@ -33,6 +33,7 @@
 							bottom: menuItem.bottom,
 							left: menuItem.left
 						}">
+						<border-hex></border-hex>
 						<div class="menuLabel">{{menuItem.label}}</div>
 					</div>
 				</div>
@@ -270,10 +271,10 @@
 	.menuHexagon
 	{
 		position: absolute;
-		background: url(/img/hexagon-04.png) no-repeat;
-		background-size: contain;
+		// background: url(/img/hexagon-04.png) no-repeat;
+		// background-size: contain;
 		width: 174px;
-		height: 198px;
+		height: 174px;
 		transition: all .3s ease;
 		cursor: pointer;
 

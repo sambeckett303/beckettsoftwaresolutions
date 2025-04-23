@@ -1,7 +1,9 @@
 <template>
 	<transition name="bounce">
 	<div>
-		<div class="pageTitle" style="position: initial; width: 80%;margin: auto;margin-top: 75px;">Let's Build!</div>
+		<div style="margin-top: 15px">
+			<section-title title="Let's build something amazing"></section-title>
+		</div>
 		<form @submit.prevent="submitQuoteRequest" name="contact">
 			<div class="quoteContainer">
 				<div class="quoteLabel">Tell me a little about your project:</div>
@@ -12,7 +14,7 @@
 				<input class="quoteText" v-model="email">
 				<p v-if="showMissingFieldsMessage">Please provide both email and password</p>
 				<div style="margin-bottom: 50px;">
-					<button class="button">SUBMIT</button>
+					<my-button buttonText="SUBMIT"></my-button>
 				</div>
 			</div>
 		</form>
@@ -100,13 +102,13 @@
 	}
 	.quoteLabel {
 		font-size: 18px;
-	    color: #6160ff;
+	    color: var(--primary-color);
 	    padding-bottom: 10px;
 	}
 
 	.quoteText {
 		margin-bottom: 15px;
-		border: 1px solid #6160ff;
+		border: 1px solid var(--secondary-color);
 		background: #efefef;
 	    font-size: 15px;
 	    padding: 10px;

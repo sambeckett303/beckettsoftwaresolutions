@@ -4,7 +4,7 @@ const props = defineProps({ buttonText: String });
 
 <template>
     <div class="buttonContainer">
-        <a class="buttonText">{{ buttonText }}</a> 
+        <button class="buttonText">{{ buttonText }}</button> 
     </div>
 </template>
 
@@ -27,5 +27,6 @@ const props = defineProps({ buttonText: String });
         width: 100%;
         box-sizing: border-box;
         display: block;
+        cursor: pointer;
     }
 </style>
