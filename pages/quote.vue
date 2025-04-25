@@ -26,11 +26,11 @@
 		</div>
 		<div class="dialogContainer" v-if="success">
 			<div class="text">Successfully sent request. We will be in touch shortly!</div>
-			<div class="button" @click="closeSuccess">BACK TO HOME</div>
+			<my-button @click="closeSuccess" buttonText="BACK TO HOME"></my-button>
 		</div>
 		<div class="dialogContainer" v-if="showErrorDialog">
 			<div class="text">Oops.. Sorry, there was an unexpected error. Please contact sam@vailvalleywebworks.com</div>
-			<div class="button" @click="closeSuccess">BACK TO HOME</div>
+			<my-button @click="closeSuccess" buttonText="BACK TO HOME"></my-button>
 		</div>
 	</div>
 	</transition>
@@ -42,7 +42,7 @@
 		name: 'quote',
 		data: () => ({
 			sending: false,
-			success: false,
+			success: true,
 			showErrorDialog: false,
 			showMissingFieldsMessage: false,
 			email: '',
@@ -139,7 +139,7 @@
 	}
 
 	.fadeBg {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
