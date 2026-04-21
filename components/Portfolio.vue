@@ -31,6 +31,7 @@
         margin-top: 50px;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 50px;
 
         .item {
             display: flex;
@@ -115,6 +116,11 @@
                 gif: '/gif/thrushdesigns.gif',
                 description: 'A portfolio website for an Seattle-based Artist to showcase (and edit) her various unique artwork, services, and includes an editable blog.',
                 link: 'https://thrushdesigns.art',
+            }, {
+                title: 'Clera News',
+                gif: '/img/CleraNews.png',
+                description: 'A modern news aggregation platform that curates and delivers personalized news content from various sources, providing users with a streamlined way to stay informed about topics that matter to them.',
+                link: 'https://clera.news',
             }],
         })
     }
